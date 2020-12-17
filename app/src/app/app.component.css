@@ -1,0 +1,19 @@
+.main {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    background-color: #fff
+}
+
+.aside {
+    width: 250px;
+    background-color: #333d54; 
+}
+
+.top {
+    height: 64px;
+}
+
+.app {
+    padding: 10px;
+}
