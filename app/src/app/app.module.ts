@@ -43,6 +43,7 @@ import { MatTreeModule } from '@angular/material/tree';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { DeviceConListComponent } from './page/device-con-list/device-con-list.component';
 import { SeniorConListComponent } from './page/senior-con-list/senior-con-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { SeniorConListComponent } from './page/senior-con-list/senior-con-list.c
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatAutocompleteModule,

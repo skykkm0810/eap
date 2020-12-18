@@ -35,3 +35,7 @@ mat-card {
   grid-template-columns: 220px 1fr;
   column-gap: 10px;
 }
+
+.mat-elevation-z8 {
+  box-shadow: rgba(150, 150, 150, 0.2) 0px 0px 3px 2px;
+}

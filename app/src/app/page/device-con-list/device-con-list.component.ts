@@ -2,17 +2,8 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { UserData } from '../../interface/interface';
-
-/** Constants used to fill up our data base. */
-const COLORS: string[] = [
-  'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
-  'aqua', 'blue', 'navy', 'black', 'gray'
-];
-const NAMES: string[] = [
-  'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
-  'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
-];
+import { Filter, Device, DEVICES, deviceFilter } from '../../interface/interface';
+import { ThemePalette } from '@angular/material/core';
 
 @Component({
   selector: 'app-device-con-list',
@@ -20,40 +11,51 @@ const NAMES: string[] = [
   styleUrls: ['./device-con-list.component.css']
 })
 export class DeviceConListComponent implements AfterViewInit {
+
+  allComplete: boolean = false;
   
-  displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
-  dataSource: MatTableDataSource<UserData>;
+  displayedColumns: string[] = ['id', 'type', 'name', 'center', 'location', 'inserted', 'status'];
+  dataSource: MatTableDataSource<Device>;
 
-  @ViewChild( MatPaginator ) paginator: MatPaginator;
-  @ViewChild( MatSort ) sort: MatSort;
-
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
+  
+  filter = deviceFilter
+  
   constructor() {
-    const users = Array.from({length: 100}), (_, k) => createNewUser(k + 1));
-    this.dataSource = new MatTableDataSource(users);
+    this.dataSource = new MatTableDataSource(DEVICES);
   }
-
+  
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
-  applyFilter(event: Event) {
+  
+  applyFilter(event: Event) {  
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();
-
     if ( this.dataSource.paginator ) {
       this.dataSource.paginator.firstPage();
     }
+    console.log(this.dataSource);
   }
-}
+  
+  updateAllComplete() {
+    this.allComplete = this.filter.subFilters != null && this.filter.subFilters.every(t => t.completed);
+  }
 
-function createNewUser(id: number): UserData {
-  const name = NAMES[Math.round(Math.random() * (NAMES.length - 1))] + ' ' + NAMES[Math.round(Math.random() * (NAMES.length - 1))].charAt(0) + '.';
+  someComplete(): boolean {
+    if (this.filter.subFilters == null) {
+      return false;
+    }
+    return this.filter.subFilters.filter(t => t.completed).length > 0 && !this.allComplete;
+  }
 
-  return {
-    id: id.toString(),
-    name: name,
-    progress: Math.round(Math.random() * 100).toString(),
-    color: COLORS[Math.round(Math.random() * (COLORS.length - 1))]
-  };
+  setAll(completed: boolean) {
+    this.allComplete = completed;
+    if (this.filter.subFilters == null) {
+      return;
+    }
+    this.filter.subFilters.forEach(t => t.completed = completed);
+  }
 }
