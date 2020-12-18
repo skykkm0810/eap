@@ -2,8 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Filter, Device, DEVICES, deviceFilter } from '../../interface/interface';
-import { ThemePalette } from '@angular/material/core';
+import { Device, DEVICES, deviceFilter } from '../../interface/interface';
 
 @Component({
   selector: 'app-device-con-list',
