@@ -1,6 +1,22 @@
 <mat-list role="list">
-  <a routerLink="/deviceConList"><mat-list-item>Item 1</mat-list-item></a>
-  <a routerLink="/"><mat-list-item>Item 1</mat-list-item></a>
-  <mat-list-item routerLink="/seniorConList">Item 2</mat-list-item>
-  <mat-list-item>Item 3</mat-list-item>
+  <mat-accordion>
+  <div *ngFor="let item of items">
+    <div *ngIf="!item.subItem">
+      <div class="m-l-8">
+        <mat-list-item routerLink="{{ item.path }}">{{ item.name }}</mat-list-item>
+      </div>
+    </div>
+    <div *ngIf="item.subItem">
+      <mat-expansion-panel (opened)="panelOpenState = true"
+      (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ item.name }}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-list-item *ngFor="let subItem of item.subItem" routerLink="{{ subItem.path }}">{{ subItem.name }}</mat-list-item>
+      </mat-expansion-panel>
+    </div>
+  </div>
+  </mat-accordion>
 </mat-list>

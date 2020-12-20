@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "NanumGothic";
+  src: local("NanumGothic"), url(./assets/fonts/NanumGothic.ttf) format("truetype");
+}
+
 * {
   padding : 0;
   margin : 0;
@@ -5,7 +10,7 @@
   box-sizing: border-box;
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif !important; }
 
 mat-card {
   box-shadow: rgba(80, 80, 80, 0.2) 1px 1px 2px 2px !important;
@@ -38,4 +43,22 @@ mat-card {
 
 .mat-elevation-z8 {
   box-shadow: rgba(150, 150, 150, 0.2) 0px 0px 3px 2px;
+}
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin-top: 4px;
+}
+
+tr {
+  height: 35px !important;
 }

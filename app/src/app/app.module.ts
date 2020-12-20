@@ -41,9 +41,16 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
-import { DeviceConListComponent } from './page/device-con-list/device-con-list.component';
-import { SeniorConListComponent } from './page/senior-con-list/senior-con-list.component';
 import { FormsModule } from '@angular/forms';
+import { CenterAComponent } from './page/center-a/center-a.component';
+import { CenterBComponent } from './page/center-b/center-b.component';
+import { DeviceListComponent } from './page/device-list/device-list.component';
+import { SeniorListComponent } from './page/senior-list/senior-list.component';
+import { ActivityListComponent } from './page/activity-list/activity-list.component';
+import { WorkerListComponent } from './page/worker-list/worker-list.component';
+import { NoticeListComponent } from './page/notice-list/notice-list.component';
+import { TaskListComponent } from './page/task-list/task-list.component';
+import { CctvListComponent } from './page/cctv-list/cctv-list.component';
 
 @NgModule({
   declarations: [
@@ -51,8 +58,15 @@ import { FormsModule } from '@angular/forms';
     AsideComponent,
     TopComponent,
     DashboardComponent,
-    DeviceConListComponent,
-    SeniorConListComponent
+    CenterAComponent,
+    CenterBComponent,
+    DeviceListComponent,
+    SeniorListComponent,
+    ActivityListComponent,
+    WorkerListComponent,
+    NoticeListComponent,
+    TaskListComponent,
+    CctvListComponent,
   ],
   imports: [
     BrowserModule,

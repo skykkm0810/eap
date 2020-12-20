@@ -1,0 +1,29 @@
+<mat-card class="m-b-10">
+    어르신 목록
+</mat-card>
+
+<div class="card-grid-container">
+    <mat-card class="grid-content" *ngFor="let senior of seniors">
+        <img
+            class="avartar-circle"
+            src="assets/images/users/{{ senior.photo }}"
+            width="80%">
+        <p>
+            {{ senior.name }}
+        </p>
+        <p> {{ senior.age }} / {{ senior.gender }}</p>
+        <p> {{ senior.center }} / {{ senior.latest }}</p>
+
+        <mat-divider></mat-divider>
+
+        <div class="btnContainer">
+            <div class="btn">
+                연락
+            </div>
+            <div class="btn">
+                정보
+            </div>
+        </div>
+
+    </mat-card>
+</div>

@@ -1,0 +1,30 @@
+.card-grid-container {
+    width: 100%;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.grid-content {
+    text-align: center;
+    color: #a1aab2;
+    border: rgba(0, 0, 0, 0.1) solid 1px;
+    border-radius: 0;
+
+    box-shadow: none !important;
+}
+
+.avartar-circle {
+    border-radius: 50%;
+}
+
+.btnContainer {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+}
+
+.btn {
+    padding: 18px 0 2px;
+}
