@@ -1,0 +1,18 @@
+.card-grid-container{
+    grid-template-columns: repeat(4, 1fr);
+}
+.grid-content{
+    height:100px;
+    padding:0;
+    /* border:0; */
+}
+.grid-content a {
+    display: block;
+    height:100%;
+    width:100%;
+    line-height: 100px;
+}
+/* .grid-content:nth-child(1) a{ background-color:#35e0a7 ;}
+.grid-content:nth-child(2) a{ background-color: ;}
+.grid-content:nth-child(3) a{ background-color: ;}
+.grid-content:nth-child(4) a{ background-color: ;} */

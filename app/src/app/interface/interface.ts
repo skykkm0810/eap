@@ -1,7 +1,7 @@
 import { ThemePalette } from "@angular/material/core"
 
 export const TAGS : Record<string, string> = {
-  DASHBOARD: '/',
+  DASHBOARD: '',
   DEVICELIST: 'devistList',
   SENIORLIST: 'seniorList',
   SENIORPRESENTLIST: 'seniorPresentList',

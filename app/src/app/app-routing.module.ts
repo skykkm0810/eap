@@ -11,9 +11,12 @@ import { SeniorListComponent } from './page/senior-list/senior-list.component';
 import { TaskListComponent } from './page/task-list/task-list.component';
 import { WorkerListComponent } from './page/worker-list/worker-list.component';
 import { DietaryComponent } from './page/dietary/dietary.component';
+import { VideosComponent } from './page/videos/videos.component';
+import { DashboardComponent } from './page/dashboard/dashboard.component';
 
 
 const routes: Routes = [
+  { path: TAGS.DASHBOARD, component: DashboardComponent },
   { path: TAGS.DEVICELIST, component: DeviceListComponent },
   { path: TAGS.SENIORLIST, component: SeniorListComponent },
   { path: TAGS.ACTIVITYLIST, component: ActivityListComponent },
@@ -24,6 +27,7 @@ const routes: Routes = [
   { path: TAGS.CENTERA, component: CenterAComponent },
   { path: TAGS.CENTERB, component: CenterBComponent },
   { path: TAGS.DIETARYS, component: DietaryComponent },
+  { path: TAGS.VIDEOS, component: VideosComponent },
 ];
 
 @NgModule({
