@@ -1,0 +1,41 @@
+.header mat-card-title {
+    display:inline-block;
+    font-size: 1rem;
+    margin:0;
+}
+.header mat-icon {
+    font-size:1.4rem;
+    cursor:pointer;
+    float:right;
+}
+.bodyWrap { padding-top: 5%;}
+mat-grid-list { padding-top: 30px;}
+.dietrayCard { 
+    width:90%;
+    height:90%;
+    padding: 8px 16px;
+}
+.cardDiv{
+    width:100%;
+    height:100%;
+    padding:0;
+}
+.img { 
+    background: no-repeat center center / cover;
+}
+.contents p { 
+    position: absolute;
+    top:0;
+    color:rgb(68,167,185);
+}
+.contents .mealList {
+    position: absolute;
+    left:20%;
+    top:25px;
+    font-size : 0.8rem;
+}
+.mat-icon-button{
+    position: absolute;
+    top:0;
+    right:0;
+}

@@ -10,6 +10,8 @@ import { NoticeListComponent } from './page/notice-list/notice-list.component';
 import { SeniorListComponent } from './page/senior-list/senior-list.component';
 import { TaskListComponent } from './page/task-list/task-list.component';
 import { WorkerListComponent } from './page/worker-list/worker-list.component';
+import { DietaryComponent } from './page/dietary/dietary.component';
+
 
 const routes: Routes = [
   { path: TAGS.DEVICELIST, component: DeviceListComponent },
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: TAGS.NOTICELIST, component: NoticeListComponent },
   { path: TAGS.CENTERA, component: CenterAComponent },
   { path: TAGS.CENTERB, component: CenterBComponent },
+  { path: TAGS.DIETARYS, component: DietaryComponent },
 ];
 
 @NgModule({

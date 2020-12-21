@@ -12,66 +12,108 @@ export const TAGS : Record<string, string> = {
   NOTICELIST: 'noticeList',
   CENTERA: 'centerA',
   CENTERB: 'centerB',
+  NOTICES: 'notices',
+  VIDEOS: 'videos',
+  DIETARYS: 'dietary',
 } 
 
 export interface AsideItem {
   path: string;
   name: string;
+  icon?: string;
   subItem?: AsideItem[];
 }
 
 export const ASIDELISTS: AsideItem[] = [
   {
     path: TAGS.DASHBOARD,
-    name: '대시보드'
+    name: '대시보드',
+    icon:"dashboard",
   },
   { 
     path: '',
     name: '시설 관리',
+    icon:"store",
     subItem: [
       {
         path: TAGS.CENTERA,
-        name: '녹양주간보호센터'
+        name: '녹양주간보호센터',
+        icon:"label",
+
       },
       { 
         path: TAGS.CENTERB,
-        name: '요셉주간보호센터'
+        name: '요셉주간보호센터',
+        icon:"label",
       },
     ]
   },
   { 
     path: '', 
     name: '어르신 정보',
+    icon:"perm_identity",
     subItem: [
       {
         path: TAGS.SENIORLIST,
-        name: '어르신 목록'
+        name: '어르신 목록',
+        icon:"people",
       },
       {
         path: TAGS.SENIORPRESENTLIST,
-        name: '출석부'
+        name: '출석부',
+        icon:"emoji_people",
       },
     ] 
   },
   { 
     path: TAGS.CCTVLIST,
-    name: 'CCTV 관리' 
+    name: 'CCTV 관리' ,
+    icon: "control_camera"
   },
   { 
     path: TAGS.DEVICELIST,
-    name: '돌봄 기기' 
+    name: '돌봄 기기' ,
+    icon: "devices",
   },
   { 
     path: TAGS.WORKERLIST, 
-    name: '인력 관리' 
+    name: '인력 관리' ,
+    icon: "person_search",
+
   },
   { 
     path: TAGS.ACTIVITYLIST, 
-    name: '활동 관리' 
+    name: '활동 관리' ,
+    icon: "style",
+
   },
   { 
     path: TAGS.TASKLIST, 
-    name: '업무 관리' 
+    name: '업무 관리' ,
+    icon: 'receipt_long'
+  },
+  { 
+    path: TAGS.OTHERS, 
+    name: '자료 센터',
+    icon: 'book_online',
+    subItem: [
+      {
+        path: TAGS.NOTICES,
+        name: '공지 사항',
+        icon: 'sms',
+      },
+      { 
+        path: TAGS.VIDEOS,
+        name: '동영상',
+        icon: 'video_library',
+
+      },
+      { 
+        path: TAGS.DIETARYS,
+        name: '식단표',
+        icon: 'restaurant',
+      },
+    ]
   },
 ]
 
@@ -81,14 +123,17 @@ export interface Filter {
   color: ThemePalette;
   subFilters?: Filter[];
 }
-
+// user
 export interface UserData {
-  id: string;
+  id: number;
   name: string;
   progress: string;
-  color: string;
-  colors: string;
+  img?:string;
+  color?: string;
 };
+export const USERS: UserData[] = [
+  {id:1,name:"깽미", progress:"관리자",color: "skyblue",img:"2.png" },
+]
 
 export interface Device {
   id: number;
@@ -299,4 +344,39 @@ export const TIMELINES: Timeline[] = [
   { img: '2.jpg', event: '낙상 사고 발생', timelog: '12/7 10:12', desc: '낙상 발생 및 응급 호출 / 윤모모' },
   { img: '3.jpg', event: '신규 이용자 등록', timelog: '11/15 15:10', desc: '박모모 / 여성 / 64세' },
   { img: '4.jpg', event: '로본 이상 감지', timelog: '10/30 14:23', desc: '로봇A 구동부 이상 감지' },
+]
+
+// dietary
+export interface Dietary {
+  year:number;
+  month:number;
+  day:number;
+  meals?:string[];
+  info?:string;
+  url?:string;
+}
+
+export const DIETARYS : Dietary[] =[
+  {year:2020, month:12, day:1, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:2, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:3, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:4, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:7, info:"나들이 도시락 대체", url:"dietary.jpg"},
+  {year:2020, month:12, day:8, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:9, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:10, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:11, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:14, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"특식 제공", url:"dietary.jpg"},
+  {year:2020, month:12, day:15, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:16, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:17, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:18, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:21, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"추가 간식", url:"dietary.jpg"},
+  {year:2020, month:12, day:22, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:23, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:24, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:28, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:29, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:30, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+  {year:2020, month:12, day:31, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
 ]

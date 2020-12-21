@@ -28,3 +28,43 @@ mat-list-item, mat-panel-item, mat-panel-title {
 .mat-expansion-panel-spacing {
     margin: 0;
 }
+mat-icon { 
+    margin-right:10px;
+}
+
+
+/* 로고 */
+.logo { 
+    height:120px; 
+    padding:1rem;
+}
+.logo a {
+    display: block; 
+    width:100%;
+    height:100%;
+    background: url(../../../assets/images/unicom.png) no-repeat center center / contain; 
+    }
+/* 사용자 */
+.manager {
+    padding-top: 20px;
+}
+.manager p {
+    text-align: center;
+}
+.manager .userImg {
+    width:60px;
+    height:60px;
+}
+.manager .userName {
+    color:#fff;
+}
+.manager .userName:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.manager .work{
+    color:rgba(255, 255, 255, 0.5);
+}
+.mat-menu-item .mat-icon{
+    margin-right: 5px;
+}

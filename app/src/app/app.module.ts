@@ -51,6 +51,8 @@ import { WorkerListComponent } from './page/worker-list/worker-list.component';
 import { NoticeListComponent } from './page/notice-list/notice-list.component';
 import { TaskListComponent } from './page/task-list/task-list.component';
 import { CctvListComponent } from './page/cctv-list/cctv-list.component';
+import { DietaryComponent } from './page/dietary/dietary.component';
+import { VideosComponent } from './page/videos/videos.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +69,8 @@ import { CctvListComponent } from './page/cctv-list/cctv-list.component';
     NoticeListComponent,
     TaskListComponent,
     CctvListComponent,
+    DietaryComponent,
+    VideosComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { ASIDELISTS } from '../../interface/interface';
+import { ASIDELISTS, USERS } from '../../interface/interface';
 
 @Component({
   selector: 'app-aside',
@@ -10,6 +10,7 @@ import { ASIDELISTS } from '../../interface/interface';
 export class AsideComponent implements OnInit {
 
   items = ASIDELISTS;
+  user = USERS;
 
   panelOpenState: boolean;
 
