@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Timeline, TIMELINES } from '../../interface/interface';
 import { Device, DEVICES } from '../../interface/interface';
 import { Senior, SENIORS } from '../../interface/interface';
 import { Request, REQUESTS } from '../../interface/interface';
@@ -12,6 +13,8 @@ import { Request, REQUESTS } from '../../interface/interface';
   styleUrls: ['./center-a.component.css']
 })
 export class CenterAComponent implements AfterViewInit {
+
+  timelines = TIMELINES;
 
   requestDisplayedColumns: string[] = [ 'id', 'progress', 'from', 'desc', 'who' ];
   requestDataSource: MatTableDataSource<Request>;

@@ -16,6 +16,10 @@ mat-card {
   box-shadow: rgba(80, 80, 80, 0.2) 1px 1px 2px 2px !important;
 }
 
+p {
+  margin: 0 0 6px !important;
+}
+
 .m-b-0 {
   margin-bottom: 0px !important;
 }
@@ -41,6 +45,57 @@ mat-card {
   column-gap: 10px;
 }
 
+.infoTab {
+  display: grid;
+  width: 100%;
+  height: 100%;
+
+  grid-template-columns: 250px 1fr;
+  column-gap: 10px;
+}
+
+.infoOuter {
+  padding: 0 !important;
+  box-shadow: none !important;
+}
+
+.card-grid-container {
+  width: 100%;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+@media(max-width: 1368px) {
+  .card-grid-container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.grid-content {
+  text-align: center;
+  color: #a1aab2;
+  border: rgba(0, 0, 0, 0.1) solid 1px;
+  border-radius: 0;
+
+  box-shadow: none !important;
+}
+
+.avatar-circle {
+  border-radius: 50%;
+}
+
+.btnContainer {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+}
+
+.btn {
+  padding: 18px 0 2px;
+}
+
 .mat-elevation-z8 {
   box-shadow: rgba(150, 150, 150, 0.2) 0px 0px 3px 2px;
 }
@@ -61,4 +116,30 @@ ul {
 
 tr {
   height: 35px !important;
+}
+
+.timelineContainer {
+  display: grid;
+  width: 100%;
+
+  grid-template-columns: 100px 1fr;
+  row-gap: 20px;
+  padding: 10px;
+}
+
+.timelineAvatar {
+  padding: 20px;
+  text-align: center;
+}
+
+.timelineContent {
+  padding: 10px;
+}
+
+.black-50 {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.black-80 {
+  color: rgba(0, 0, 0, 0.8);
 }

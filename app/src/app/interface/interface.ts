@@ -286,3 +286,17 @@ export const REQUESTS: Request[] = [
   { id: 9, color: 'success', progress: '완료', from: '앱', desc: '관공서 서비스', who: '최모모'},
   { id: 10, color: 'success', progress: '완료', from: '관리자', desc: '관공서 서비스', who: '진모모'},
 ]
+
+export interface Timeline {
+  img : string;
+  event : string;
+  timelog : string;
+  desc : string;
+}
+
+export const TIMELINES: Timeline[] = [
+  { img: '1.jpg', event: '반찬 배달 요청', timelog: '3분 전', desc: '반찬 배달 요청 / 김모모' },
+  { img: '2.jpg', event: '낙상 사고 발생', timelog: '12/7 10:12', desc: '낙상 발생 및 응급 호출 / 윤모모' },
+  { img: '3.jpg', event: '신규 이용자 등록', timelog: '11/15 15:10', desc: '박모모 / 여성 / 64세' },
+  { img: '4.jpg', event: '로본 이상 감지', timelog: '10/30 14:23', desc: '로봇A 구동부 이상 감지' },
+]
