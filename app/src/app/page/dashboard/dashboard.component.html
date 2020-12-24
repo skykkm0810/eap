@@ -2,32 +2,224 @@
   <div class="card-grid-container">
     <mat-card class="grid-content">
       <a href="/" mat-button>
-        <mat-icon class="headerIcon">supervisor_account</mat-icon>
-        현재 시설 이용자 수
-        <span>23</span>
+        <div class="iconWrap">
+          <mat-icon class="headerIcon">supervisor_account</mat-icon>
+        </div>
+        <span class="useNum label">현재 시설 이용자 수</span>
+        <span class="number">23</span>
       </a>
     </mat-card>
     <mat-card class="grid-content">
       <a href="/" mat-button>
-        <mat-icon class="headerIcon">event</mat-icon>
-        월간 이벤트 발생 건수
-        <span>113</span>
+        <div class="iconWrap">
+          <mat-icon class="headerIcon">event</mat-icon>
+        </div>
+        <span class="evtNum label">월간 이벤트 발생 건수</span>
+        <span class="number">113</span>
       </a>
     </mat-card>
     <mat-card class="grid-content">
       <a href="/" mat-button>
-        <mat-icon class="headerIcon">alarm</mat-icon>
-        월간 요청 발생 건수
-        <span>43</span>
+        <div class="iconWrap">
+          <mat-icon class="headerIcon">alarm</mat-icon>
+        </div>
+        <span class="reqNum label">월간 요청 발생 건수</span>
+        <span class="number">43</span>
       </a>
     </mat-card>
     <mat-card class="grid-content">
       <a href="/" mat-button>
-        <mat-icon class="headerIcon">priority_high</mat-icon>
-        월간 응급 상황 건수
-        <span>63</span>
+        <div class="iconWrap">
+          <mat-icon class="headerIcon">priority_high</mat-icon>
+        </div>
+        <span class="emgNum label">월간 응급 상황 건수</span>
+        <span class="number">6</span>
       </a>
     </mat-card>
   </div>
+  <mat-card class="chart">
+    <mat-card-title>시설 별 이벤트 발생 건수</mat-card-title>
+    <div>
+      <canvas baseChart style="width:100%;height:400px;"
+      [datasets]="lineChartData"
+      [labels]="lineChartLabels"
+      [colors]="lineChartColors"
+      [options]="lineChartOptions" 
+      [legend]="lineChartLegend" 
+      [chartType]="'line'">
+      </canvas>
+    </div>
+  </mat-card>
+  <div class="dataTables">
+    <mat-card>
+      <mat-card-title>최근 요청 내역</mat-card-title>
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="requestData" #sort1='matSort' matSort>
 
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+            <td mat-cell *matCellDef="let row1"> {{row1.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="progress">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 진행상황 </th>
+            <td mat-cell *matCellDef="let row1"> {{row1.progress}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="from">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 발신처 </th>
+            <td mat-cell *matCellDef="let row1"> {{row1.from}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="desc">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 내용 </th>
+            <td mat-cell *matCellDef="let row1"> {{row1.desc}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="who">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 당사자 </th>
+            <td mat-cell *matCellDef="let row1"> {{row1.who}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="requestColumns"></tr>
+          <tr mat-row *matRowDef="let row1; columns: requestColumns;"></tr>
+
+        </table>
+
+        <mat-paginator [pageSize]="5" #pagnator1='matPaginator'></mat-paginator>
+
+      </div>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>기기 동작 로그</mat-card-title>
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="logData" matSort #sort2='matSort'>
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 모델명 </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 기기종류 </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.type}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="center">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 시설 </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.center}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="time">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 발생시간 </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.time}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="desc">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 내용 </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.desc}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="logColumns"></tr>
+          <tr mat-row *matRowDef="let row2; columns: logColumns;"></tr>
+
+
+        </table>
+
+        <mat-paginator [pageSize]="5" #pagnator2='matPaginator'></mat-paginator>
+
+      </div>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>날씨 정보</mat-card-title>
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="weatherData" matSort #sort3='matSort'>
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+            <td mat-cell *matCellDef="let row3"> {{row3.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="center">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 시설 </th>
+            <td mat-cell *matCellDef="let row3"> {{row3.center}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="todayT">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 오늘 온도 </th>
+            <td mat-cell *matCellDef="let row3"> {{row3.todayT}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="todayW">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 오늘 습도 </th>
+            <td mat-cell *matCellDef="let row3"> {{row3.todayW}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="tmrrwT">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 내일 온도 </th>
+            <td mat-cell *matCellDef="let row3"> {{row3.tmrrwT}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="tmrrwW">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 내일 습도 </th>
+            <td mat-cell *matCellDef="let row3"> {{row3.tmrrwW}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="weatherColumns"></tr>
+          <tr mat-row *matRowDef="let row3; columns: weatherColumns;"></tr>
+        </table>
+
+        <mat-paginator [pageSize]="5" #pagnator3='matPaginator'></mat-paginator>
+
+      </div>
+    </mat-card>
+    <mat-card>
+      <mat-card-title>코로나 정보</mat-card-title>
+      <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="covidData" matSort #sort4='matSort'>
+
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+            <td mat-cell *matCellDef="let row4"> {{row4.id}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 날짜 </th>
+            <td mat-cell *matCellDef="let row4"> {{row4.date}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="location">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 지역 위치 </th>
+            <td mat-cell *matCellDef="let row4"> {{row4.location}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="new">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 신규확진자 </th>
+            <td mat-cell *matCellDef="let row4"> {{row4.new}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 총 확진자 </th>
+            <td mat-cell *matCellDef="let row4"> {{row4.total}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="desc">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 내용 </th>
+            <td mat-cell *matCellDef="let row4"> {{row4.desc}} </td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="covidColumns"></tr>
+          <tr mat-row *matRowDef="let row4; columns: covidColumns;"></tr>
+
+        </table>
+
+        <mat-paginator [pageSize]="5" #pagnator4='matPaginator'></mat-paginator>
+      </div>
+    </mat-card>
+  </div>
 </div>

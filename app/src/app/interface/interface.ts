@@ -12,9 +12,11 @@ export const TAGS : Record<string, string> = {
   NOTICELIST: 'noticeList',
   CENTERA: 'centerA',
   CENTERB: 'centerB',
-  NOTICES: 'notices',
   VIDEOS: 'videos',
   DIETARYS: 'dietary',
+  VDETAIL: 'vdetail',
+  NOTICEADD: 'noticeAdd',
+  SENIORDETAIL: 'seniorDetail',
 } 
 
 export interface AsideItem {
@@ -98,7 +100,7 @@ export const ASIDELISTS: AsideItem[] = [
     icon: 'book_online',
     subItem: [
       {
-        path: TAGS.NOTICES,
+        path: TAGS.NOTICELIST,
         name: '공지 사항',
         icon: 'sms',
       },
@@ -168,6 +170,60 @@ export const DEVICES: Device[] = [
   { id: 3, name: 'ST-01', type: '센서', center: '시설C', inserted: '2020.11.16', location: '활동실', status: '정상', color: 'blue'},
   { id: 4, name: 'RB-01', type: '로봇', center: '시설B', inserted: '2020.10.05', location: '휴게실', status: '이상', color: 'red'},
   { id: 5, name: 'ST-02', type: '센서', center: '시설C', inserted: '2020.10.15', location: '출입구', status: '수리', color: 'orange'},
+]
+// log
+export interface log {
+  id:number;
+  name:string;
+  type:string;
+  center:string;
+  time:string;
+  desc:string;
+  who?:string;
+}
+export const LOG : log[] =[
+  { id: 1, name: 'RB-01', type: '로봇', center: '시설A', time: '12/22 14:05', desc: '플랫폼에 데이터 전송', },
+  { id: 2, name: 'ST-04', type: '센서', center: '시설B', time: '12/22 12:12', desc: '대화', },
+  { id: 3, name: 'ST-01', type: '센서', center: '시설C', time: '12/22 09:25', desc: '출석 확인', },
+  { id: 4, name: 'RB-01', type: '로봇', center: '시설B', time: '12/21 14:02', desc: '안부 전달',},
+  { id: 5, name: 'ST-02', type: '센서', center: '시설C', time: '12/21 11:30', desc: '이동 불가 : 확인요청', },
+]
+// weather
+export interface weather {
+  id:number;
+  center:string;
+  todayT:string;
+  todayW: string;
+  tmrrwT:string;
+  tmrrwW:string;
+}
+export const WEATHER : weather[] =[
+  { id: 1, center: '시설A', todayT: '8/-3', todayW: '40%', tmrrwT: '10/3', tmrrwW: '41%' },
+  { id: 2, center: '시설B', todayT: '9/1', todayW: '56%', tmrrwT: '3/-5', tmrrwW: '51%' },
+  { id: 3, center: '시설C', todayT: '4/-4', todayW: '39%', tmrrwT: '10/1', tmrrwW: '25%' },
+  { id: 4, center: '시설D', todayT: '7/-4', todayW: '44%', tmrrwT: '6/1', tmrrwW: '24%' },
+  { id: 5, center: '시설E', todayT: '-1/-12', todayW: '65%', tmrrwT: '7/-2', tmrrwW: '26%' },
+]
+// covid
+export interface covid {
+  id:number;
+  date:string;
+  location:string;
+  new:number;
+  total:number;
+  desc?:string;
+}
+export const COVID : covid[]=[
+  { id: 1, date: '20/12/22', location: '의정부시 녹양동', new: 0, total: 0, desc:'' },
+  { id: 2, date: '20/12/22', location: '아산시 염치읍', new: 0, total: 0, desc:'' },
+  { id: 3, date: '20/12/22', location: '서울시 강남구', new: 15, total: 826, desc:'수도권 3단계 발령' },
+  { id: 4, date: '20/12/22', location: '제주도 서귀포', new: 20, total: 272, desc:'' },
+  { id: 5, date: '20/12/22', location: '대구시 달서구', new: 5, total: 10, desc:'' },
+  { id: 6, date: '20/12/21', location: '의정부시 녹양동', new: 0, total: 0, desc:'' },
+  { id: 7, date: '20/12/21', location: '아산시 염치읍', new: 0, total: 0, desc:'' },
+  { id: 8, date: '20/12/21', location: '서울시 강남구', new: 1, total: 811, desc:'' },
+  { id: 9, date: '20/12/21', location: '제주도 서귀포', new: 21, total: 252, desc:'연속 20명대' },
+
 ]
 
 export interface Senior {
@@ -379,4 +435,72 @@ export const DIETARYS : Dietary[] =[
   {year:2020, month:12, day:29, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
   {year:2020, month:12, day:30, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
   {year:2020, month:12, day:31, meals:["밥","국","반찬1","반찬2","반찬3","반찬4"], info:"", url:"dietary.jpg"},
+]
+
+// video
+export interface Video {
+  id: number;
+  kind?: string;
+  thum: string;
+  update : string;
+  title: string;
+  secs?: string;
+
+}
+
+export const VIDEOS : Video[] = [
+  {id:1, kind:'운동', thum:'1.jpg', update:"20/12/20" , title:"아침운동A", secs:"아침에 하는 맨손운동"},
+  {id:2, kind:'운동', thum:'2.jpg', update:"20/12/20" , title:"아침운동B", secs:"아침에 하는 맨손운동"},
+  {id:3, kind:'교육', thum:'3.jpg', update:"20/12/19" , title:"교육A", secs:"도움이 되는 교육영상"},
+  {id:4, kind:'코로나', thum:'4.jpg', update:"20/12/05" , title:"코로나지침A", secs:"이 시국에 알아야할 지침"},
+  {id:5, kind:'코로나', thum:'5.jpg', update:"20/11/20" , title:"코로나지침B", secs:"이 시국에 알아야할 지침"},
+  {id:6, kind:'운동', thum:'6.jpg', update:"20/10/12" , title:"아침운동C", secs:"아침에 하는 맨손운동"},
+  {id:7, kind:'교육', thum:'7.jpg', update:"20/10/10" , title:"교육B", secs:"도움이 되는 교육영상"},
+  {id:8, kind:'교육', thum:'8.jpg', update:"20/10/02" , title:"교육C", secs:"도움이 되는 교육영상"},
+  {id:9, kind:'프로그램', thum:'1.jpg', update:"20/9/20" , title:"프로그램A", secs:"프로그램 영상"},
+  {id:10, kind:'명상', thum:'2.jpg', update:"20/8/20" , title:"명상A", secs:"명상에 쓰이는 영상"},
+
+]
+// noticeList
+export interface NoticeList{
+  id:number;
+  paperNum:string;
+  title:string;
+  update:string;
+}
+export const NOTICELIST : NoticeList[] =[
+  {id:1, paperNum:"CNN-020-011", title: "12월 시설A 복지센터 시설 공사안내", update:"20/12/3"},
+  {id:2, paperNum:"CNN-019-010", title: "12월 시설A 가정통신문", update:"20/12/1"},
+  {id:3, paperNum:"CNN-020-008", title: "12월 시설B 프로그램 안내", update:"20/12/1"},
+  {id:4, paperNum:"CNN-020-009", title: "12월 시설B 복지센터 시설 공사안내", update:"20/12/1"},
+  {id:5, paperNum:"CNN-020-010", title: "12월 시설A 진행 예정 프로그램 안내", update:"20/11/30"},
+  {id:6, paperNum:"CNN-020-007", title: "코로나 주의 안내", update:"20/11/26"},
+  {id:7, paperNum:"CNN-020-006", title: "손씻기 교육 안내", update:"20/11/25"},
+  {id:8, paperNum:"CNN-020-011", title: "11월 시설A 복지센터 시설 공사안내", update:"20/11/3"},
+  {id:9, paperNum:"CNN-019-010", title: "11월 시설A 가정통신문", update:"20/11/1"},
+  {id:10, paperNum:"CNN-020-008", title: "11월 시설B 프로그램 안내", update:"20/11/1"},
+  {id:11, paperNum:"CNN-020-009", title: "11월 시설B 복지센터 시설 공사안내", update:"20/10/1"},
+  {id:12, paperNum:"CNN-020-010", title: "11월 시설A 진행 예정 프로그램 안내", update:"20/10/30"},
+  {id:13, paperNum:"CNN-020-007", title: "코로나 주의 안내", update:"20/11/26"},
+  {id:14, paperNum:"CNN-020-006", title: "손씻기 교육 안내", update:"20/11/25"},
+  {id:15, paperNum:"CNN-020-005", title: "화장실 리모델링 안내", update:"20/12/1"},
+  {id:16, paperNum:"CNN-020-004", title: "위탁업체 변경 안내", update:"20/12/1"},
+  {id:17, paperNum:"CNN-019-011", title: "외부 일정 알림", update:"20/12/1"},
+  {id:19, paperNum:"CNN-020-003", title: "10월 가정 통신문", update:"20/12/1"},
+]
+
+// emergency
+export interface Emergency{
+  id:number;
+  date: string;
+  situation: string;
+  process: string;
+  add?:string;
+}
+export const EMERGENCY : Emergency[] =[
+  {id:1,date:'20/12/01', situation:"넘어짐", process: "시설응급처치"},
+  {id:2,date:'20/11/30', situation:"넘어짐", process: "시설응급처치"},
+  {id:3,date:'20/11/28', situation:"끼임", process: "시설응급처치"},
+  {id:4,date:'20/11/15', situation:"쓰러짐", process: "병원 이송" ,add:"급성 빈혈"},
+  {id:5,date:'20/11/01', situation:"부딪힘", process: "병원 이송"},
 ]

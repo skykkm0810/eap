@@ -1,18 +1,58 @@
 .card-grid-container{
     grid-template-columns: repeat(4, 1fr);
+    padding-bottom: 30px;
 }
 .grid-content{
     height:100px;
     padding:0;
-    /* border:0; */
 }
 .grid-content a {
     display: block;
+    position: relative;
+    text-align: left;
     height:100%;
     width:100%;
     line-height: 100px;
 }
-/* .grid-content:nth-child(1) a{ background-color:#35e0a7 ;}
-.grid-content:nth-child(2) a{ background-color: ;}
-.grid-content:nth-child(3) a{ background-color: ;}
-.grid-content:nth-child(4) a{ background-color: ;} */
+.grid-content .label {
+    display: inline-block;
+    padding-left: 10px;
+    word-break: break-all;
+}
+.grid-content .number {
+    float:right;
+    font-size: 1.7rem;
+}
+.iconWrap {
+    display: inline-block;
+    width:60px; 
+    height: 60px;
+    border-radius: 100%;
+    position: relative;
+}
+.grid-content:nth-child(1) .iconWrap{background-color: skyblue;}
+.grid-content:nth-child(2) .iconWrap{background-color: slateblue;}
+.grid-content:nth-child(3) .iconWrap{background-color: tomato;}
+.grid-content:nth-child(4) .iconWrap{background-color: red;}
+.iconWrap mat-icon {
+    position:absolute;
+    top:calc(50% - 12px);
+    left:calc(50% - 12px);
+    color:#fff;
+}
+/* grid */
+.dataTables{
+    padding-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap:15px;
+}
+.dataTables mat-card-title, .chart mat-card-title {
+    font-size: 1rem;
+}
+/* chart */
+.chart mat-card-title {
+    width:100%;
+}
+/* table */

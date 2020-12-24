@@ -53,6 +53,10 @@ import { TaskListComponent } from './page/task-list/task-list.component';
 import { CctvListComponent } from './page/cctv-list/cctv-list.component';
 import { DietaryComponent } from './page/dietary/dietary.component';
 import { VideosComponent } from './page/videos/videos.component';
+import { ChartsModule } from 'ng2-charts';
+import { VideoDetailComponent } from './page/video-detail/video-detail.component';
+import { NoticeAddComponent } from './page/notice-add/notice-add.component';
+import { SeniorDetailComponent } from './page/senior-detail/senior-detail.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +75,9 @@ import { VideosComponent } from './page/videos/videos.component';
     CctvListComponent,
     DietaryComponent,
     VideosComponent,
+    VideoDetailComponent,
+    NoticeAddComponent,
+    SeniorDetailComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,6 +119,7 @@ import { VideosComponent } from './page/videos/videos.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

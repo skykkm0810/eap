@@ -1,0 +1,14 @@
+table tr:not(.mat-header-row):hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+h3 {
+    display: inline-block; 
+    margin:0;
+    line-height:36px;
+}
+.addNotice { 
+    background-color: #462aac;
+    color:#fff;
+    float: right;
+}

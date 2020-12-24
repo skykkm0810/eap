@@ -13,7 +13,9 @@ import { WorkerListComponent } from './page/worker-list/worker-list.component';
 import { DietaryComponent } from './page/dietary/dietary.component';
 import { VideosComponent } from './page/videos/videos.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
-
+import { VideoDetailComponent } from './page/video-detail/video-detail.component';
+import { NoticeAddComponent } from './page/notice-add/notice-add.component';
+import { SeniorDetailComponent } from './page/senior-detail/senior-detail.component';
 
 const routes: Routes = [
   { path: TAGS.DASHBOARD, component: DashboardComponent },
@@ -28,6 +30,10 @@ const routes: Routes = [
   { path: TAGS.CENTERB, component: CenterBComponent },
   { path: TAGS.DIETARYS, component: DietaryComponent },
   { path: TAGS.VIDEOS, component: VideosComponent },
+  { path: TAGS.VDETAIL, component: VideoDetailComponent },
+  { path: TAGS.NOTICEADD, component: NoticeAddComponent },
+  { path: TAGS.SENIORDETAIL, component: SeniorDetailComponent },
+
 ];
 
 @NgModule({

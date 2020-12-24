@@ -36,5 +36,9 @@ export class CenterAComponent implements AfterViewInit {
     this.deviceDataSource.paginator = this.paginator;
     this.deviceDataSource.sort = this.sort;
   }
+  
+  select(){
+    alert();
+  }
 
 }

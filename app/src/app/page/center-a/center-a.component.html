@@ -15,12 +15,23 @@
                 <p>연락처 : 031-0000-0000</p>
             </div>
         </mat-card>
+        <!-- <mat-card class="status">
+            <p>요청 현황</p>
+            <div class="contents">
+                <ul>
+                    <li class="m-b-10">전체<span class="Total sum">12</span></li>
+                    <li class="m-b-10">작동 중<span class="Work sum">12</span></li>
+                    <li class="m-b-10">이상 감지<span class="Error sum">12</span></li>
+                    <li>정비 중<span class="Fix sum">12</span></li>
+                </ul>
+            </div>
+        </mat-card> -->
     </mat-card>
     
     
     <mat-tab-group>
-        <mat-tab label="타임라인">
-            <div class="timelineContainer" *ngFor="let timeline of timelines">
+        <mat-tab label="타임라인" (click)='select()'>
+            <div class="timelineContainer" *ngFor="let timeline of timelines" (click)='select()'>
                 <div class="timelineAvatar">
                     <img src="assets/images/users/{{ timeline.img }}" class="avatar-circle" width="100%">
                 </div>

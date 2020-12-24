@@ -1,0 +1,41 @@
+h3 { 
+    display: inline-block; 
+    margin:0;
+    line-height:36px;
+}
+.addVideo { 
+    background-color: #462aac;
+    color:#fff;
+    float: right;
+}
+.videoList { 
+    padding-top : 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 20px;
+    position: relative;
+}
+.videoList button {
+    position: absolute;
+    right:0;
+    top:0;
+}
+.videoList mat-card{
+    text-align: center;
+}
+.videoList .thumnail {
+    width:60%;
+    cursor: pointer;
+}
+.videoList .title {
+    font-size: 1.1rem;
+    padding-top: 10px;
+}
+.videoList .title:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.videoList .update {
+    text-align: right;
+    margin:0!important;
+}

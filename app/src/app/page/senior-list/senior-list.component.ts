@@ -14,5 +14,7 @@ export class SeniorListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  detail(){
+    location.href="./seniorDetail";
+  }
 }
