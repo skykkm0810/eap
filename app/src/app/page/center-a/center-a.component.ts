@@ -1,11 +1,13 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
+import { MatTable, MatTableDataSource } from '@angular/material/table';
 import { Timeline, TIMELINES } from '../../interface/interface';
 import { Device, DEVICES } from '../../interface/interface';
 import { Senior, SENIORS } from '../../interface/interface';
 import { Request, REQUESTS } from '../../interface/interface';
+
+import { PhxChannelService } from '../../service/phx-channel.service';
 
 @Component({
   selector: 'app-center-a',
@@ -26,19 +28,33 @@ export class CenterAComponent implements AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() {
+  constructor( private phxChannel: PhxChannelService ) {
     this.requestDataSource = new MatTableDataSource(REQUESTS);
     this.seniorDataSource = new MatTableDataSource(SENIORS);
     this.deviceDataSource = new MatTableDataSource(DEVICES);
+    phxChannel.Devices.subscribe( data => {
+      console.log(data);
+      // this.deviceDataSource = new MatTableDataSource(data);
+    })
   }
-
+  
   ngAfterViewInit(): void {
+    // this.phxChannel.reqDevices();
     this.deviceDataSource.paginator = this.paginator;
     this.deviceDataSource.sort = this.sort;
   }
   
   select(){
-    alert();
+    this.phxChannel.send(
+      "device",
+      "deviceAdd",
+      {
+        centerId: 1,
+        type: '로봇',
+        name: 'RB-01',
+        location: '활동실',
+        status: '정상'
+      })
   }
 
 }
