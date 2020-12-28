@@ -21,6 +21,7 @@ import { AttendantsComponent } from './page/attendants/attendants.component';
 import { ScheduleComponent } from './page/schedule/schedule.component';
 import { PhotobookComponent } from './page/photobook/photobook.component';
 import { TaskAddComponent } from './page/task-add/task-add.component';
+import { CctvDetailComponent } from './page/cctv-detail/cctv-detail.component';
 
 const routes: Routes = [
   { path: TAGS.DASHBOARD, component: DashboardComponent },
@@ -43,6 +44,7 @@ const routes: Routes = [
   { path: TAGS.SCHEDULE, component: ScheduleComponent },
   { path: TAGS.PHOTOBOOK, component: PhotobookComponent },
   { path: TAGS.TASKADD, component: TaskAddComponent },
+  { path: TAGS.CCTVDETAIL, component: CctvDetailComponent },
 
 ];
 

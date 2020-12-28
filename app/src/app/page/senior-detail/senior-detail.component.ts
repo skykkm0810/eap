@@ -6,6 +6,8 @@ import {REQUESTS , Request} from '../../interface/interface';
 import {EMERGENCY , Emergency} from '../../interface/interface';
 import {MEDICINE , Medicine} from '../../interface/interface';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Senior } from '../../interface/interface';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-senior-detail',
@@ -25,13 +27,17 @@ export class SeniorDetailComponent implements AfterViewInit {
   @ViewChild('sort2') sort2: MatSort;
   @ViewChild('pagnator3') paginator3: MatPaginator;
   @ViewChild('sort3') sort3: MatSort;
-  constructor(public dialog: MatDialog) {
+  constructor(
+    public dialog: MatDialog,
+    public route : ActivatedRoute,
+  ) {
     this.requestData = new MatTableDataSource(REQUESTS);
     this.emergencyData = new MatTableDataSource(EMERGENCY);
     this.medicineData = new MatTableDataSource(MEDICINE);
-    
   }
   
+  senior : any;
+
   ngAfterViewInit(): void {
     this.requestData.paginator = this.paginator1;
     this.requestData.sort = this.sort1;
@@ -39,7 +45,14 @@ export class SeniorDetailComponent implements AfterViewInit {
     this.emergencyData.sort = this.sort2;
     this.medicineData.paginator = this.paginator3;
     this.medicineData.sort = this.sort3;
-
+    
+    this.senior = this.route.snapshot.paramMap.get('data');
+    console.log(this.senior);
+    console.log(this.route.snapshot.params);
+    this.route.queryParams
+      .subscribe( param => {
+        console.log(param['data']);
+      })
 
   }
 

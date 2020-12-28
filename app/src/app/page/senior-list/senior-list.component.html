@@ -18,10 +18,10 @@
         <mat-divider></mat-divider>
 
         <div class="btnContainer">
-            <button mat-button class="call" (click)="openNumber()">
+            <button mat-button class="call" (click)="openNumber(senior.name,senior.contact, senior.guardian, senior.guardianContact)">
                 연락
             </button>
-            <button mat-button class="info" (click)="detail();">
+            <button mat-button class="info" (click)="detail(senior.id)">
                 정보
             </button>
         </div>

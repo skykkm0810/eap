@@ -71,6 +71,7 @@ import { TaskAddComponent } from './page/task-add/task-add.component';
 import { SeniorAddComponent } from './modal/senior-add/senior-add.component';
 import { SeniorUpdateComponent } from './modal/senior-update/senior-update.component';
 import { CctvAddComponent } from './modal/cctv-add/cctv-add.component';
+import { CctvDetailComponent } from './page/cctv-detail/cctv-detail.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import { CctvAddComponent } from './modal/cctv-add/cctv-add.component';
     SeniorAddComponent,
     SeniorUpdateComponent,
     CctvAddComponent,
+    CctvDetailComponent,
   ],
   imports: [
     BrowserModule,

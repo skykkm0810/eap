@@ -70,8 +70,9 @@
 .table{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    column-gap: 10%;
+    column-gap: 3%;
     row-gap: 30px;
+    padding:0 1rem;
 }
 .table p {
     padding:0.5rem 0;
@@ -80,6 +81,9 @@
 .afterMedi{
     float:right;
     cursor:pointer;
+}
+table tr {
+    line-height: 35px;
 }
 /* modal */
 @keyframes showon {

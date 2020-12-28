@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CCTVLIST} from '../../interface/interface';
+import { CCTVLIST, cctv} from '../../interface/interface';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { CctvAddComponent } from '../../modal/cctv-add/cctv-add.component';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-cctv-list',
@@ -10,7 +12,9 @@ import { CctvAddComponent } from '../../modal/cctv-add/cctv-add.component';
 })
 export class CctvListComponent implements OnInit {
   cctvs = CCTVLIST;
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    public router : Router,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +22,10 @@ export class CctvListComponent implements OnInit {
     const dialogRef = this.dialog.open(CctvAddComponent, {
       width: '40%',
     });
+  }
+  
+  detail( id : number ){
+    this.router.navigate(['/cctvDetail/' + id]);
   }
 }
 

@@ -16,12 +16,13 @@ export const TAGS : Record<string, string> = {
   DIETARYS: 'dietary',
   VDETAIL: 'vdetail',
   NOTICEADD: 'noticeAdd',
-  SENIORDETAIL: 'seniorDetail',
+  SENIORDETAIL: 'seniorDetail/:id',
   ATTENDANCE: 'attendance',
   ATTENDANTS: 'attendants',
   SCHEDULE: 'schedule',
   PHOTOBOOK: 'photobook',
   TASKADD: 'taskAdd',
+  CCTVDETAIL: 'cctvDetail',
 } 
 
 export interface AsideItem {
@@ -98,12 +99,12 @@ export const ASIDELISTS: AsideItem[] = [
         name: '목록',
         icon: 'list',
       },
-      { 
-        path: TAGS.SCHEDULE,
-        name: '일정표',
-        icon: 'calendar_today',
+      // { 
+      //   path: TAGS.SCHEDULE,
+      //   name: '일정표',
+      //   icon: 'calendar_today',
 
-      },
+      // },
       { 
         path: TAGS.PHOTOBOOK,
         name: '사진첩',
@@ -250,28 +251,31 @@ export const COVID : covid[]=[
 
 export interface Senior {
   id : number;
-  photo : string;
+  photo? : string;
   name : string;
+  contact?: string;
   gender : string;
   age : number;
   desc : string;
   latest : string;
   center : string;
   temp? : string;
-  guardian? : string;
+  guardian : string;
+  guardianContact : string;
+  
 }
 
 export const SENIORS: Senior[] = [
-  { id: 1, photo: '1.jpg', name: '김모모', gender: '남', age: 74, temp: '36.5',  desc: '', guardian: '무', latest: '어제', center: '시설A'},
-  { id: 2, photo: '2.jpg', name: '윤모모', gender: '남', age: 68, temp: '36.5',  desc: '장애 5급', guardian: '무', latest: '어제', center: '시설A'},
-  { id: 3, photo: '3.jpg', name: '박모모', gender: '여', age: 64, temp: '36.5',  desc: '', guardian: '무', latest: '어제', center: '시설B'},
-  { id: 4, photo: '4.jpg', name: '임모모', gender: '남', age: 72, temp: '36.5',  desc: '휠체어', guardian: '무', latest: '어제', center: '시설A'},
-  { id: 5, photo: '5.jpg', name: '정모모', gender: '남', age: 80, temp: '36.5',  desc: '', guardian: '무', latest: '어제', center: '시설A'},
-  { id: 6, photo: '6.jpg', name: '설모모', gender: '남', age: 78, temp: '36.5',  desc: '', guardian: '무', latest: '어제', center: '시설B'},
-  { id: 7, photo: '7.jpg', name: '이모모', gender: '여', age: 71, temp: '36.5',  desc: '', guardian: '무', latest: '어제', center: '시설A'},
-  { id: 8, photo: '8.jpg', name: '김모모', gender: '남', age: 66, temp: '36.5',  desc: '', guardian: '무', latest: '3일 전', center: '시설B'},
-  { id: 9, photo: '1.jpg', name: '최모모', gender: '여', age: 61, temp: '36.5',  desc: '', guardian: '무', latest: '5일 전', center: '시설B'},
-  { id: 10, photo: '2.jpg', name: '진모모', gender: '남', age: 63, temp: '36.5',  desc: '', guardian: '무', latest: '지난 달', center: '시설B'},
+  { id: 1, photo: '1.jpg', name: '김모모', contact:"010-9550-8470" ,gender: '남', age: 74, temp: '36.5',  desc: '', guardian: '김경민', latest: '어제', center: '시설A' ,guardianContact:"010-9550-8470"},
+  { id: 2, photo: '2.jpg', name: '윤모모', contact:"010-9550-8470" ,gender: '남', age: 68, temp: '36.5',  desc: '장애 5급', guardian: '김경민', latest: '어제', center: '시설A',guardianContact:"010-9550-8470"},
+  { id: 3, photo: '3.jpg', name: '박모모', contact:"010-9550-8470" ,gender: '여', age: 64, temp: '36.5',  desc: '', guardian: '김경민', latest: '어제', center: '시설B' ,guardianContact:"010-9550-8470"},
+  { id: 4, photo: '4.jpg', name: '임모모', contact:"010-9550-8470" ,gender: '남', age: 72, temp: '36.5',  desc: '휠체어', guardian: '김경민', latest: '어제', center: '시설A',guardianContact:"010-9550-8470"},
+  { id: 5, photo: '5.jpg', name: '정모모', contact:"010-9550-8470" ,gender: '남', age: 80, temp: '36.5',  desc: '', guardian: '김경민', latest: '어제', center: '시설A' ,guardianContact:"010-9550-8470"},
+  { id: 6, photo: '6.jpg', name: '설모모', contact:"010-9550-8470" ,gender: '남', age: 78, temp: '36.5',  desc: '', guardian: '김경민', latest: '어제', center: '시설B' ,guardianContact:"010-9550-8470"},
+  { id: 7, photo: '7.jpg', name: '이모모', contact:"010-9550-8470" ,gender: '여', age: 71, temp: '36.5',  desc: '', guardian: '김경민', latest: '어제', center: '시설A' ,guardianContact:"010-9550-8470"},
+  { id: 8, photo: '8.jpg', name: '김모모', contact:"010-9550-8470" ,gender: '남', age: 66, temp: '36.5',  desc: '', guardian: '김경민', latest: '3일 전', center: '시설B',guardianContact:"010-9550-8470"},
+  { id: 9, photo: '1.jpg', name: '최모모', contact:"010-9550-8470" ,gender: '여', age: 61, temp: '36.5',  desc: '', guardian: '김경민', latest: '5일 전', center: '시설B',guardianContact:"010-9550-8470"},
+  { id: 10, photo: '2.jpg', name: '진모모', contact:"010-9550-8470" ,gender: '남', age: 63, temp: '36.5',  desc: '', guardian: '김경민', latest: '지난 달', center: '시설B',guardianContact:"010-9550-8470"},
 ]
 
 export interface Worker {
