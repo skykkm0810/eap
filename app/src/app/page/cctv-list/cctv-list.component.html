@@ -1,1 +1,24 @@
-<p>cctv-list works!</p>
+<mat-card>
+  <h3>CCTV 관리</h3>
+  <button mat-button class="addCCTV" (click)="addcctv()">영상 추가</button>
+</mat-card>
+<div class="CCTVlist">
+  <mat-card *ngFor="let cctv of cctvs">
+    <img class="thumnail" src="../../../assets/images/users/{{cctv.thum}}" alt='/'>
+    <p class="title">{{cctv.title}}</p>
+    <p class="update">{{cctv.update}}</p>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>edit</mat-icon>
+        <span>정보 변경</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>remove_circle</mat-icon>
+        <span>영상 삭제</span>
+      </button>
+    </mat-menu>
+  </mat-card>
+</div>

@@ -1,3 +1,11 @@
+.header{
+    line-height: 36px;
+}
+.addSenior{
+    background-color: slateblue;
+    color:#fff;
+    float:right;
+}
 .grid-content{
     padding-bottom:0;
 }

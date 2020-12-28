@@ -1,0 +1,41 @@
+h3 { 
+    display: inline-block; 
+    margin:0;
+    line-height:36px;
+}
+.addCCTV { 
+    background-color: #462aac;
+    color:#fff;
+    float: right;
+}
+.CCTVlist { 
+    padding-top : 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px 20px;
+    position: relative;
+}
+.CCTVlist button {
+    position: absolute;
+    right:0;
+    top:0;
+}
+.CCTVlist mat-card{
+    text-align: center;
+}
+.CCTVlist .thumnail {
+    width:60%;
+    cursor: pointer;
+}
+.CCTVlist .title {
+    font-size: 1.1rem;
+    padding-top: 10px;
+}
+.CCTVlist .title:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.CCTVlist .update {
+    text-align: right;
+    margin:0!important;
+}

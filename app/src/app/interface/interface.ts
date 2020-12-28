@@ -17,6 +17,11 @@ export const TAGS : Record<string, string> = {
   VDETAIL: 'vdetail',
   NOTICEADD: 'noticeAdd',
   SENIORDETAIL: 'seniorDetail',
+  ATTENDANCE: 'attendance',
+  ATTENDANTS: 'attendants',
+  SCHEDULE: 'schedule',
+  PHOTOBOOK: 'photobook',
+  TASKADD: 'taskAdd',
 } 
 
 export interface AsideItem {
@@ -61,7 +66,7 @@ export const ASIDELISTS: AsideItem[] = [
         icon:"people",
       },
       {
-        path: TAGS.SENIORPRESENTLIST,
+        path: TAGS.ATTENDANCE,
         name: '출석부',
         icon:"emoji_people",
       },
@@ -84,10 +89,27 @@ export const ASIDELISTS: AsideItem[] = [
 
   },
   { 
-    path: TAGS.ACTIVITYLIST, 
+    path: TAGS.ACTIVATE, 
     name: '활동 관리' ,
     icon: "style",
+    subItem: [
+      {
+        path: TAGS.ACTIVITYLIST,
+        name: '목록',
+        icon: 'list',
+      },
+      { 
+        path: TAGS.SCHEDULE,
+        name: '일정표',
+        icon: 'calendar_today',
 
+      },
+      { 
+        path: TAGS.PHOTOBOOK,
+        name: '사진첩',
+        icon: 'insert_photo',
+      },
+    ]
   },
   { 
     path: TAGS.TASKLIST, 
@@ -444,21 +466,44 @@ export interface Video {
   thum: string;
   update : string;
   title: string;
-  secs?: string;
+  desc?: string;
 
 }
 
 export const VIDEOS : Video[] = [
-  {id:1, kind:'운동', thum:'1.jpg', update:"20/12/20" , title:"아침운동A", secs:"아침에 하는 맨손운동"},
-  {id:2, kind:'운동', thum:'2.jpg', update:"20/12/20" , title:"아침운동B", secs:"아침에 하는 맨손운동"},
-  {id:3, kind:'교육', thum:'3.jpg', update:"20/12/19" , title:"교육A", secs:"도움이 되는 교육영상"},
-  {id:4, kind:'코로나', thum:'4.jpg', update:"20/12/05" , title:"코로나지침A", secs:"이 시국에 알아야할 지침"},
-  {id:5, kind:'코로나', thum:'5.jpg', update:"20/11/20" , title:"코로나지침B", secs:"이 시국에 알아야할 지침"},
-  {id:6, kind:'운동', thum:'6.jpg', update:"20/10/12" , title:"아침운동C", secs:"아침에 하는 맨손운동"},
-  {id:7, kind:'교육', thum:'7.jpg', update:"20/10/10" , title:"교육B", secs:"도움이 되는 교육영상"},
-  {id:8, kind:'교육', thum:'8.jpg', update:"20/10/02" , title:"교육C", secs:"도움이 되는 교육영상"},
-  {id:9, kind:'프로그램', thum:'1.jpg', update:"20/9/20" , title:"프로그램A", secs:"프로그램 영상"},
-  {id:10, kind:'명상', thum:'2.jpg', update:"20/8/20" , title:"명상A", secs:"명상에 쓰이는 영상"},
+  {id:1, kind:'운동', thum:'1.jpg', update:"20/12/20" , title:"아침운동A", desc:""},
+  {id:2, kind:'운동', thum:'2.jpg', update:"20/12/20" , title:"아침운동B", desc:"아침에 하는 맨손운동"},
+  {id:3, kind:'교육', thum:'3.jpg', update:"20/12/19" , title:"교육A", desc:"도움이 되는 교육영상"},
+  {id:4, kind:'코로나', thum:'4.jpg', update:"20/12/05" , title:"코로나지침A", desc:"이 시국에 알아야할 지침"},
+  {id:5, kind:'코로나', thum:'5.jpg', update:"20/11/20" , title:"코로나지침B", desc:"이 시국에 알아야할 지침"},
+  {id:6, kind:'운동', thum:'6.jpg', update:"20/10/12" , title:"아침운동C", desc:"아침에 하는 맨손운동"},
+  {id:7, kind:'교육', thum:'7.jpg', update:"20/10/10" , title:"교육B", desc:"도움이 되는 교육영상"},
+  {id:8, kind:'교육', thum:'8.jpg', update:"20/10/02" , title:"교육C", desc:"도움이 되는 교육영상"},
+  {id:9, kind:'프로그램', thum:'1.jpg', update:"20/9/20" , title:"프로그램A", desc:"프로그램 영상"},
+  {id:10, kind:'명상', thum:'2.jpg', update:"20/8/20" , title:"명상A", desc:"명상에 쓰이는 영상"},
+
+]
+// cctv
+export interface cctv {
+  id: number;
+  kind?: string;
+  thum: string;
+  update : string;
+  title: string;
+  desc?: string;
+
+}
+export const CCTVLIST : cctv[] = [
+  {id:1, kind:'사고', thum:'1.jpg', update:"20/12/20 18:46" , title:"사고", desc:""},
+  {id:2, kind:'요청', thum:'2.jpg', update:"20/12/20 18:46" , title:"사고", desc:""},
+  {id:3, kind:'요청', thum:'3.jpg', update:"20/12/19 18:46" , title:"요청", desc:""},
+  {id:4, kind:'요청', thum:'4.jpg', update:"20/12/05 18:46" , title:"요청", desc:""},
+  {id:5, kind:'요청', thum:'5.jpg', update:"20/11/20 18:46" , title:"요청", desc:""},
+  {id:6, kind:'요청', thum:'6.jpg', update:"20/10/12 18:46" , title:"요청", desc:""},
+  {id:7, kind:'요청', thum:'7.jpg', update:"20/10/10 18:46" , title:"요청", desc:""},
+  {id:8, kind:'요청', thum:'8.jpg', update:"20/10/02 18:46" , title:"요청", desc:""},
+  {id:9, kind:'사고', thum:'1.jpg', update:"20/9/20 18:46" , title:"사고", desc:""},
+  {id:10, kind:'사고', thum:'2.jpg', update:"20/8/20 18:46" , title:"사고", desc:""},
 
 ]
 // noticeList
@@ -503,4 +548,42 @@ export const EMERGENCY : Emergency[] =[
   {id:3,date:'20/11/28', situation:"끼임", process: "시설응급처치"},
   {id:4,date:'20/11/15', situation:"쓰러짐", process: "병원 이송" ,add:"급성 빈혈"},
   {id:5,date:'20/11/01', situation:"부딪힘", process: "병원 이송"},
+]
+// 투약정보
+export interface Medicine{
+  id:number;
+  date:string;
+  reason:string;
+  guard: string;
+  mediName: string;
+}
+export const MEDICINE : Medicine[] = [
+  {id:1,date:'20/12/01',reason:"신장기능", guard:"김근찬", mediName: "루비날 75"},
+  {id:2,date:'20/11/30',reason:"신장기능", guard:"김근찬", mediName: "루비날 75"},
+  {id:3,date:'20/11/28',reason:"신장기능", guard:"김근찬", mediName: "루비날 75"},
+  {id:4,date:'20/11/15',reason:"고혈압", guard:"김근찬", mediName: "누트리라이프"},
+  {id:5,date:'20/11/01',reason:"고혈압", guard:"김근찬", mediName: "누트리라이프"},
+]
+// 출석
+export interface Attendance {
+  id:number;
+  date:string;
+  attand:number;
+  strange:number;
+  center:string;
+}
+export const ATTENDANCE: Attendance[] = [
+  {id:1,date:'20/12/01',attand:40, strange:0, center: "녹양주간보호센터"},
+  {id:2,date:'20/12/01',attand:40, strange:0, center: "요셉주간보호센터"},
+  {id:3,date:'20/12/01',attand:40, strange:0, center: "녹양주간보호센터"},
+  {id:4,date:'20/12/01',attand:40, strange:0, center: "요셉주간보호센터"},
+  {id:5,date:'20/12/01',attand:40, strange:0, center: "녹양주간보호센터"},
+  {id:6,date:'20/12/01',attand:40, strange:0, center: "요셉주간보호센터"},
+  {id:7,date:'20/12/01',attand:40, strange:0, center: "녹양주간보호센터"},
+  {id:8,date:'20/12/01',attand:40, strange:0, center: "요셉주간보호센터"},
+  {id:9,date:'20/12/01',attand:40, strange:0, center: "녹양주간보호센터"},
+  {id:10,date:'20/12/01',attand:40, strange:0, center: "요셉주간보호센터"},
+  {id:11,date:'20/12/01',attand:40, strange:0, center: "녹양주간보호센터"},
+  {id:12,date:'20/12/01',attand:40, strange:0, center: "요셉주간보호센터"},
+
 ]

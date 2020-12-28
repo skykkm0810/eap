@@ -5,7 +5,7 @@ import { ASIDELISTS, USERS } from '../../interface/interface';
 @Component({
   selector: 'app-aside',
   templateUrl: './aside.component.html',
-  styleUrls: ['./aside.component.css']
+  styleUrls: ['./aside.component.css',]
 })
 export class AsideComponent implements OnInit {
 

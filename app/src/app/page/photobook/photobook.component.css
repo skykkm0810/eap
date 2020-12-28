@@ -1,0 +1,40 @@
+.m-b-10{
+    line-height: 36px;
+    font-size: 1.2rem;
+}
+.addPhoto {
+    background-color: #462aac;
+    color:#fff;
+    float: right;
+}
+.gridContainer{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 2%;
+    row-gap: 30px;
+}
+.gridItem {
+    border:1px solid #ccc;
+    padding-top: 40px;
+    border-radius: 10px;
+    position: relative;
+}
+.gridItem .mat-icon-button{
+    position: absolute;
+    right:0;
+    top:0;
+    width:30px;
+    
+}
+.gridItem img{
+    width:100%;
+}
+.gridItem .contents{
+    padding:0.5rem;
+    padding-bottom: 0;
+}
+.gridItem .contents input {
+    border:0;
+    padding:0.2rem 0;
+}

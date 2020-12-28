@@ -57,5 +57,7 @@ export class TaskListComponent implements AfterViewInit {
     }
     this.filter.subFilters.forEach(t => t.completed = completed);
   }
-
+  add(){
+    location.href="./taskAdd"
+  }
 }

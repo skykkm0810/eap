@@ -1,3 +1,4 @@
+
 .top {
     padding:0;
     position: relative;
@@ -70,4 +71,85 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     column-gap: 10%;
+    row-gap: 30px;
+}
+.table p {
+    padding:0.5rem 0;
+    line-height: 24px;
+}
+.afterMedi{
+    float:right;
+    cursor:pointer;
+}
+/* modal */
+@keyframes showon {
+    from {
+        opacity:0;
+        display:block;
+        top:1%;
+    }
+    to{
+        opacity: 1;
+        top:5%;
+    }
+}
+@keyframes showoff{
+    0% {
+        opacity: 1;
+        top:5%;
+    }
+    90% {
+        opacity:0;
+        top:1%;
+    }
+    100%{
+        display: none;
+    }
+}
+.display{
+    display: none;
+}
+.inputMediInfo{
+    display: block;
+    position: fixed;
+    background-color: #fff;
+    top:5%;
+    right:5%;
+    width:40%;
+    
+    animation-name: showon;
+    animation-duration: 0.5s;
+}
+.inputMediInfo .infoTitle{
+    line-height:50px;
+    font-size: 1rem;
+    border-bottom: 2px solid #ddd;
+}
+.inputMediInfo form > div {
+    padding:1rem;
+}
+.inputMediInfo form span{
+    display: inline-block;
+    width:20%;
+    line-height: 40px;
+}
+.inputMediInfo form mat-form-field {
+    display: inline-block;
+    width:75%;
+    margin:0;
+    padding:0;
+}
+.inputMediInfo .buttonBox{
+    text-align: center;
+}
+.inputMediInfo .buttonBox button{
+    padding:0 8%;
+    margin:0 10px;
+}
+.inputMediInfo .buttonBox .adjust {
+    background-color: royalblue;
+    color:#fff;
+}
+.inputMediInfo .buttonBox .cancel {
+    background-color: #eee;
 }

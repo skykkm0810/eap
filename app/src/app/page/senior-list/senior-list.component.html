@@ -1,5 +1,6 @@
-<mat-card class="m-b-10">
+<mat-card class="m-b-10 header">
     어르신 목록
+    <button mat-button class="addSenior" (click)="addSenior()">인원 추가</button>
 </mat-card>
 
 <div class="card-grid-container">
@@ -17,7 +18,7 @@
         <mat-divider></mat-divider>
 
         <div class="btnContainer">
-            <button mat-button class="call">
+            <button mat-button class="call" (click)="openNumber()">
                 연락
             </button>
             <button mat-button class="info" (click)="detail();">

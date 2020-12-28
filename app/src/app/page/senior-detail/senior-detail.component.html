@@ -1,113 +1,184 @@
 <mat-card class="top m-b-20">
-    <div class="show">
-        <div class="cutton"></div>
-        <p>
-            <img src="../../../assets/images/users/3.jpg" alt="/" width=80>
-        </p>
-        <p class="name">김모모</p>
-        <p class="center">시설A</p>
+  <div class="show">
+    <div class="cutton"></div>
+    <p>
+      <img src="../../../assets/images/users/3.jpg" alt="/" width=80>
+    </p>
+    <p class="name">김모모</p>
+    <p class="center">시설A</p>
+  </div>
+  <div class="gridBox">
+    <div class="innergrid">
+      <span class="label">주소</span>
+      <span class="contents">경북 김천시 혁신8로 5</span>
     </div>
-    <div class="gridBox">
-        <div class="innergrid">
-            <span class="label">주소</span>
-            <span class="contents">경북 김천시 혁신8로 5</span>
-        </div>
-        <div class="innergrid">
-            <span class="label">보호자이름</span>
-            <span class="contents">김선지</span>
-        </div>
-        <div class="innergrid">
-            <span class="label">연락처</span>
-            <span class="contents">010-0000-0000</span>
-        </div>
-        <div class="innergrid">
-            <span class="label">보호자 연락처</span>
-            <span class="contents">010-0000-0000</span>
-        </div>
-        <div class="innergrid">
-            <span class="label">나이</span>
-            <span class="contents">74</span>
-        </div>
-        <div class="innergrid">
-            <span class="label">특이사항</span>
-            <span class="contents">좌측 시력</span>
-        </div>
+    <div class="innergrid">
+      <span class="label">보호자이름</span>
+      <span class="contents">김선지</span>
     </div>
+    <div class="innergrid">
+      <span class="label">연락처</span>
+      <span class="contents">010-0000-0000</span>
+    </div>
+    <div class="innergrid">
+      <span class="label">보호자 연락처</span>
+      <span class="contents">010-0000-0000</span>
+    </div>
+    <div class="innergrid">
+      <span class="label">나이</span>
+      <span class="contents">74</span>
+    </div>
+    <div class="innergrid">
+      <span class="label">특이사항</span>
+      <span class="contents">좌측 시력</span>
+    </div>
+  </div>
 </mat-card>
 <div class="functionButton m-b-20">
-    <button mat-button>보호자 연락</button>
-    <button mat-button>응급 요청</button>
-    <button mat-button>돌봄 서비스 신청</button>
-    <button mat-button>이동 지원</button>
+  <button mat-button>보호자 연락</button>
+  <button mat-button>응급 요청</button>
+  <button mat-button>돌봄 서비스 신청</button>
+  <button mat-button>이동 지원</button>
 </div>
 <div class="table">
-    <div>
-        <p>요청 이력</p>
-        <div class="mat-elevation-z8">
-            <table mat-table [dataSource]="requestData" #sort1='matSort' matSort>
-    
-              <ng-container matColumnDef="id">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
-                <td mat-cell *matCellDef="let row1"> {{row1.id}} </td>
-              </ng-container>
-    
-              <ng-container matColumnDef="progress">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> 진행상황 </th>
-                <td mat-cell *matCellDef="let row1"> {{row1.progress}} </td>
-              </ng-container>
-    
-              <ng-container matColumnDef="from">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> 발신처 </th>
-                <td mat-cell *matCellDef="let row1"> {{row1.from}} </td>
-              </ng-container>
-    
-              <ng-container matColumnDef="desc">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> 내용 </th>
-                <td mat-cell *matCellDef="let row1"> {{row1.desc}} </td>
-              </ng-container>
-    
-              <tr mat-header-row *matHeaderRowDef="requestColumns"></tr>
-              <tr mat-row *matRowDef="let row1; columns: requestColumns;"></tr>
-    
-            </table>
-    
-            <mat-paginator [pageSize]="5" #pagnator1='matPaginator'></mat-paginator>
-    
-          </div>
+  <div>
+    <p>요청 이력</p>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="requestData" #sort1='matSort' matSort>
+
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+          <td mat-cell *matCellDef="let row1"> {{row1.id}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="progress">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 진행상황 </th>
+          <td mat-cell *matCellDef="let row1"> {{row1.progress}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="from">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 발신처 </th>
+          <td mat-cell *matCellDef="let row1"> {{row1.from}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="desc">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 내용 </th>
+          <td mat-cell *matCellDef="let row1"> {{row1.desc}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="requestColumns"></tr>
+        <tr mat-row *matRowDef="let row1; columns: requestColumns;"></tr>
+
+      </table>
+
+      <mat-paginator [pageSize]="5" #pagnator1='matPaginator'></mat-paginator>
+
     </div>
-    
-    <div>
-        <p>응급요청</p>
-        <div class="mat-elevation-z8">
-            <table mat-table [dataSource]="emergencyData" #sort2='matSort' matSort>
-    
-              <ng-container matColumnDef="date">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> 날짜 </th>
-                <td mat-cell *matCellDef="let row2"> {{row2.date}} </td>
-              </ng-container>
-    
-              <ng-container matColumnDef="situation">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> 응급상황 </th>
-                <td mat-cell *matCellDef="let row2"> {{row2.situation}} </td>
-              </ng-container>
-    
-              <ng-container matColumnDef="process">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> 처리 내용 </th>
-                <td mat-cell *matCellDef="let row2"> {{row2.process}} </td>
-              </ng-container>
-    
-              <ng-container matColumnDef="add">
-                <th mat-header-cell *matHeaderCellDef mat-sort-header> 비고 </th>
-                <td mat-cell *matCellDef="let row2"> {{row2.add}} </td>
-              </ng-container>
-    
-              <tr mat-header-row *matHeaderRowDef="emergencyColumns"></tr>
-              <tr mat-row *matRowDef="let row2; columns: emergencyColumns;"></tr>
-    
-            </table>
-    
-            <mat-paginator [pageSize]="5" #pagnator2='matPaginator'></mat-paginator>
-    
-          </div>
+  </div>
+
+  <div>
+    <p>응급요청</p>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="emergencyData" #sort2='matSort' matSort>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 날짜 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="situation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 응급상황 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.situation}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="process">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 처리 내용 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.process}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="add">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 비고 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.add}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="emergencyColumns"></tr>
+        <tr mat-row *matRowDef="let row3; columns: emergencyColumns;"></tr>
+
+      </table>
+
+      <mat-paginator [pageSize]="5" #pagnator2='matPaginator'></mat-paginator>
+
     </div>
+  </div>
+  <div>
+    <p>투약정보
+      <span (click)="present();"  class="afterMedi"><mat-icon >add</mat-icon></span>
+    </p>
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="medicineData" #sort3='matSort' matSort>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 날짜 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.date}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="reason">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 복용이유 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.reason}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="guard">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 보호자 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.guard}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="mediName">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 복용 약 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.mediName}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="medicineColumns"></tr>
+        <tr mat-row *matRowDef="let row3; columns: medicineColumns;"></tr>
+
+      </table>
+
+      <mat-paginator [pageSize]="5" #pagnator3='matPaginator'></mat-paginator>
+
+    </div>
+  </div>
 </div>
+<mat-card class="display present">
+  <p class="infoTitle">추가 복용 기입</p>
+  <form action="/">
+    <div>
+      <p>
+        <span>복용날짜</span>
+        <mat-form-field>
+          <input matInput>
+        </mat-form-field>
+      </p>
+      <p>
+        <span>보호자</span>
+        <mat-form-field>
+          <input matInput>
+        </mat-form-field>
+      </p>
+      <p>
+        <span>복용이유</span>
+        <mat-form-field>
+          <input matInput>
+        </mat-form-field>
+      </p>
+      <p>
+        <span>약품이름</span>
+        <mat-form-field>
+          <input matInput>
+        </mat-form-field>
+      </p>
+      <div class="buttonBox">
+        <button mat-button class="adjust">추가</button>
+        <button mat-button class="cancel" (click)="remove();">취소</button>
+      </div>
+    </div>
+  </form>
+</mat-card>

@@ -57,6 +57,20 @@ import { ChartsModule } from 'ng2-charts';
 import { VideoDetailComponent } from './page/video-detail/video-detail.component';
 import { NoticeAddComponent } from './page/notice-add/notice-add.component';
 import { SeniorDetailComponent } from './page/senior-detail/senior-detail.component';
+import { AttendanceComponent } from './page/attendance/attendance.component';
+import { AttendantsComponent } from './page/attendants/attendants.component';
+import { ScheduleComponent } from './page/schedule/schedule.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { PhotobookComponent } from './page/photobook/photobook.component';
+import { TaskAddComponent } from './page/task-add/task-add.component';
+import { SeniorAddComponent } from './modal/senior-add/senior-add.component';
+import { SeniorUpdateComponent } from './modal/senior-update/senior-update.component';
+import { CctvAddComponent } from './modal/cctv-add/cctv-add.component';
 
 @NgModule({
   declarations: [
@@ -78,6 +92,14 @@ import { SeniorDetailComponent } from './page/senior-detail/senior-detail.compon
     VideoDetailComponent,
     NoticeAddComponent,
     SeniorDetailComponent,
+    AttendanceComponent,
+    AttendantsComponent,
+    ScheduleComponent,
+    PhotobookComponent,
+    TaskAddComponent,
+    SeniorAddComponent,
+    SeniorUpdateComponent,
+    CctvAddComponent,
   ],
   imports: [
     BrowserModule,
@@ -119,7 +141,15 @@ import { SeniorDetailComponent } from './page/senior-detail/senior-detail.compon
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-    ChartsModule
+    ChartsModule,
+    NgbModule,
+    CommonModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

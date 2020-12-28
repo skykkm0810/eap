@@ -1,0 +1,30 @@
+.header {
+    width:100%;
+    height:200px;
+    border-bottom: 1px solid #ccc;
+}
+.header h3 {
+    text-align: center;
+    font-size: 1.6rem;
+    padding-bottom: 40px;
+}
+.header p{
+    width:80%;
+    position: relative;
+    left: 10%;
+    font-size: 1rem;
+    
+}
+.header p .label{
+    display: inline-block;
+    width:20%;
+}
+.header p input{
+    display: inline-block;
+    width:80%;
+    padding:0.3rem;
+}
+.image {
+    border-radius: 100%;
+    width:50px;
+}

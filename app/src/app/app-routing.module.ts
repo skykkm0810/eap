@@ -16,6 +16,11 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { VideoDetailComponent } from './page/video-detail/video-detail.component';
 import { NoticeAddComponent } from './page/notice-add/notice-add.component';
 import { SeniorDetailComponent } from './page/senior-detail/senior-detail.component';
+import { AttendanceComponent } from './page/attendance/attendance.component';
+import { AttendantsComponent } from './page/attendants/attendants.component';
+import { ScheduleComponent } from './page/schedule/schedule.component';
+import { PhotobookComponent } from './page/photobook/photobook.component';
+import { TaskAddComponent } from './page/task-add/task-add.component';
 
 const routes: Routes = [
   { path: TAGS.DASHBOARD, component: DashboardComponent },
@@ -33,6 +38,11 @@ const routes: Routes = [
   { path: TAGS.VDETAIL, component: VideoDetailComponent },
   { path: TAGS.NOTICEADD, component: NoticeAddComponent },
   { path: TAGS.SENIORDETAIL, component: SeniorDetailComponent },
+  { path: TAGS.ATTENDANCE, component: AttendanceComponent },
+  { path: TAGS.ATTENDANTS, component: AttendantsComponent },
+  { path: TAGS.SCHEDULE, component: ScheduleComponent },
+  { path: TAGS.PHOTOBOOK, component: PhotobookComponent },
+  { path: TAGS.TASKADD, component: TaskAddComponent },
 
 ];
 
