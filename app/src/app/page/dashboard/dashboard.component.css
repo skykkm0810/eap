@@ -33,7 +33,7 @@
 .grid-content:nth-child(1) .iconWrap{background-color: skyblue;}
 .grid-content:nth-child(2) .iconWrap{background-color: slateblue;}
 .grid-content:nth-child(3) .iconWrap{background-color: tomato;}
-.grid-content:nth-child(4) .iconWrap{background-color: red;}
+.grid-content:nth-child(4) .iconWrap{background-color: green;}
 .iconWrap mat-icon {
     position:absolute;
     top:calc(50% - 12px);
@@ -45,7 +45,6 @@
     padding-top: 30px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
     gap:15px;
 }
 .dataTables mat-card-title, .chart mat-card-title {
@@ -56,3 +55,10 @@
     width:100%;
 }
 /* table */
+.mat-card table .mat-header-row {
+    background-color: gray;
+}
+.mat-card table .mat-header-row .mat-header-cell {
+    color:#fff;
+    font-size: 0.9rem;
+}

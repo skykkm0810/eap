@@ -39,104 +39,101 @@ export const ASIDELISTS: AsideItem[] = [
     icon:"dashboard",
   },
   { 
-    path: '',
-    name: '시설 관리',
-    icon:"store",
-    subItem: [
-      {
-        path: TAGS.CENTERA,
-        name: '녹양주간보호센터',
-        icon:"label",
-
-      },
-      { 
-        path: TAGS.CENTERB,
-        name: '요셉주간보호센터',
-        icon:"label",
-      },
-    ]
-  },
-  { 
     path: '', 
-    name: '어르신 정보',
+    name: '강사 관리',
     icon:"perm_identity",
     subItem: [
       {
         path: TAGS.SENIORLIST,
-        name: '어르신 목록',
-        icon:"people",
+        name: '승인대기목록',
+        icon:"person_add",
       },
       {
         path: TAGS.ATTENDANCE,
-        name: '출석부',
-        icon:"emoji_people",
+        name: '강사목록',
+        icon:"people",
       },
     ] 
   },
   { 
     path: TAGS.CCTVLIST,
-    name: 'CCTV 관리' ,
-    icon: "control_camera"
-  },
-  { 
-    path: TAGS.DEVICELIST,
-    name: '돌봄 기기' ,
-    icon: "devices",
-  },
-  { 
-    path: TAGS.WORKERLIST, 
-    name: '인력 관리' ,
-    icon: "person_search",
+    name: '강의 관리' ,
+    icon: "laptop_windows",
+    subItem:[
+      { 
+        path: TAGS.DEVICELIST,
+        name: '강의 목록' ,
+        icon: "list",
+      },
+      { 
+        path: TAGS.WORKERLIST, 
+        name: '강의 등록' ,
+        icon: "library_add_check",
+        
+      },
+      { 
+        path: TAGS.SCHEDULE,
+        name: '강의 일정표',
+        icon: 'calendar_today',
 
-  },
+      },
+    ]
+  },  
   { 
     path: TAGS.ACTIVATE, 
-    name: '활동 관리' ,
-    icon: "style",
+    name: '고객사 관리' ,
+    icon: "domain",
     subItem: [
       {
         path: TAGS.ACTIVITYLIST,
-        name: '목록',
+        name: '고객사 목록',
         icon: 'list',
       },
-      // { 
-      //   path: TAGS.SCHEDULE,
-      //   name: '일정표',
-      //   icon: 'calendar_today',
-
-      // },
+      
       { 
         path: TAGS.PHOTOBOOK,
-        name: '사진첩',
-        icon: 'insert_photo',
+        name: '고객사 등록',
+        icon: 'add_business',
       },
     ]
   },
   { 
     path: TAGS.TASKLIST, 
-    name: '업무 관리' ,
-    icon: 'receipt_long'
+    name: '수강회원 관리' ,
+    icon: 'person_search'
   },
+  // { 
+  //   path: TAGS.OTHERS, 
+  //   name: '자료 센터',
+  //   icon: 'book_online',
+  //   subItem: [
+  //     {
+  //       path: TAGS.NOTICELIST,
+  //       name: '공지 사항',
+  //       icon: 'sms',
+  //     },
+  //     { 
+  //       path: TAGS.VIDEOS,
+  //       name: '동영상',
+  //       icon: 'video_library',
+
+  //     },
+  //     { 
+  //       path: TAGS.DIETARYS,
+  //       name: '식단표',
+  //       icon: 'restaurant',
+  //     },
+  //   ]
+  // },
   { 
-    path: TAGS.OTHERS, 
-    name: '자료 센터',
-    icon: 'book_online',
+    path: '',
+    name: '고객 센터',
+    icon:"support_agent",
     subItem: [
       {
-        path: TAGS.NOTICELIST,
-        name: '공지 사항',
-        icon: 'sms',
-      },
-      { 
-        path: TAGS.VIDEOS,
-        name: '동영상',
-        icon: 'video_library',
-
-      },
-      { 
-        path: TAGS.DIETARYS,
-        name: '식단표',
-        icon: 'restaurant',
+        path: TAGS.CENTERA,
+        name: '시스템 문의',
+        icon:"cast",
       },
     ]
   },

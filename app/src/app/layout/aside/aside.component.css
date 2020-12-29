@@ -12,10 +12,17 @@
 }
 
 mat-list-item, mat-panel-item, mat-panel-title {
-    color: rgb( 255 255 255 / 70% ) !important;
+    color:#000!important;
     font-weight: 300;
 }
-
+mat-list-item:hover, mat-panel-item:hover,mat-panel-title:hover{
+    background-color: orange;
+    color:#fff!important;
+}
+.mat-expansion-panel-header:hover{
+    background-color: orange!important;
+    color:#fff!important;
+}
 .mat-list-item {
     font-size: 15px;
     cursor: pointer;
@@ -43,7 +50,7 @@ mat-icon {
     display: block; 
     width:100%;
     height:100%;
-    background: url(../../../assets/images/unicom.png) no-repeat center center / contain; 
+    background: url(../../../assets/images/logo_eap.png) no-repeat center center / contain; 
     }
 /* 사용자 */
 .manager {
@@ -70,4 +77,11 @@ mat-icon {
 .mat-menu-item .mat-icon{
     margin-right: 5px;
 }
-
+/* copy */
+.copy{
+    display:block;
+    width:100%;
+    text-align: center;
+    position: absolute;
+    bottom:1%;
+}

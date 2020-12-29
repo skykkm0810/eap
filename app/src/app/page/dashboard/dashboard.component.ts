@@ -51,8 +51,8 @@ export class DashboardComponent implements AfterViewInit {
   }
   
   public lineChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40, 63, 40, 113, 102, 56], label: '녹양주간보호센터',fill:false },
-    { data: [60, 19, 85, 71, 126, 105, 110, 56, 19, 83, 102, 86], label: '요셉주간보호센터',fill:false },
+    { data: [6500, 5900, 8000, 8100, 5600, 5500, 4000, 6300, 4000, 11300, 10200, 5600], label: 'A업체',fill:false },
+    { data: [6000, 1900, 8500, 7100, 12060, 10500, 11000, 5600, 1900, 8300, 10200, 8600], label: 'B업체',fill:false },
   ];
   public lineChartLabels: Label[] = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
   public lineChartOptions = {
