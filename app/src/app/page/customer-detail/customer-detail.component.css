@@ -13,17 +13,25 @@
     width:80%;
     padding-left: 50px;
 }
-.first .table {
+
+.second {
+    padding:1rem 2rem;
+}
+.second .label {
+    display:inline-block;
+    width:15%;
+    min-width:150px;
+    text-align: right;
+    font-weight: bold;
+}
+.second .vertical {
     vertical-align: top;
 }
-.first .img{
-    padding-bottom: 20px;
-    padding-right:10px;
+.second .contents {
+    display:inline-block;
+    width:80%;
+    padding-left: 50px;
 }
-
-.third {
+.second .pointTable {
     padding:1rem;
-}
-.third .delete {
-    color:red;
 }

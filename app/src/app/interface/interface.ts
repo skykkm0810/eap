@@ -708,6 +708,7 @@ export const WORKERLIST : worker[] = [
 // 수강내역 
 export interface studyinfo {
 id:number;
+date:string;
 point:string;
 title:string;
 name:string;
@@ -716,5 +717,7 @@ good:string;
 
 }
 export const STUDYINFO : studyinfo[] = [
-
+ {id:1,date:'12.17', point:'20,000 p', title:'바쁠수록 차분하게, 마음챙김 영상',name:'김모모',condition:'수강 대기', good:'10'},
+ {id:2,date:'12.17', point:'20,000 p', title:'바쁠수록 차분하게, 마음챙김 영상',name:'이모모',condition:'수강 대기', good:'10'},
+ {id:3,date:'12.17', point:'20,000 p', title:'바쁠수록 차분하게, 마음챙김 영상',name:'박모모',condition:'수강 대기', good:'10'},
 ]

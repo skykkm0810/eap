@@ -2,7 +2,7 @@ import {  Component, OnInit, AfterViewInit, ViewChild  } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { student, STUDENTSLIST } from '../../interface/interface';
+import { studyinfo, STUDYINFO } from '../../interface/interface';
 
 @Component({
   selector: 'app-customer-detail',
@@ -10,11 +10,11 @@ import { student, STUDENTSLIST } from '../../interface/interface';
   styleUrls: ['./customer-detail.component.css']
 })
 export class CustomerDetailComponent implements AfterViewInit {
-  tableColumns: string[] = ["name","belong","enrollDate","condition",'delete'];
-  tableData: MatTableDataSource<student>;
+  tableColumns: string[] = ["date","point","title","name",'condition','good'];
+  tableData: MatTableDataSource<studyinfo>;
   constructor(
     ) {
-      this.tableData = new MatTableDataSource(STUDENTSLIST);
+      this.tableData = new MatTableDataSource(STUDYINFO);
      }
   
   @ViewChild('pagnator') paginator: MatPaginator;
