@@ -15,6 +15,7 @@ mat-list-item, mat-panel-item, mat-panel-title {
     color:#000!important;
     font-weight: 300;
 }
+
 mat-list-item:hover, mat-panel-item:hover,mat-panel-title:hover{
     background-color: orange;
     color:#fff!important;

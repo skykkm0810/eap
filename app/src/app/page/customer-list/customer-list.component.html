@@ -1,0 +1,68 @@
+<mat-card class="m-b-10 header">
+    <span class="title">수강회원 목록</span>
+    <button mat-button class="download"> 다운로드 </button>
+  </mat-card>
+  <div class="contents">
+    <table mat-table [dataSource]="tableData" class="mat-elevation-z8">
+  
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> 이름 </th>
+        <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="belong">
+        <th mat-header-cell *matHeaderCellDef> 직업명 </th>
+        <td mat-cell *matCellDef="let row"> {{row.belong}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="part">
+        <th mat-header-cell *matHeaderCellDef> 부서 </th>
+        <td mat-cell *matCellDef="let row"> {{row.part}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef> 성별 </th>
+        <td mat-cell *matCellDef="let row"> {{row.gender}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef> 나이 </th>
+        <td mat-cell *matCellDef="let row"> {{row.age}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="workLocation">
+        <th mat-header-cell *matHeaderCellDef> 근무 지역 </th>
+        <td mat-cell *matCellDef="let row"> {{row.workLocation}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="TotalUsePoint">
+        <th mat-header-cell *matHeaderCellDef> 제공 포인트 </th>
+        <td mat-cell *matCellDef="let row"> {{row.TotalUsePoint}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="remainPoint">
+        <th mat-header-cell *matHeaderCellDef> 잔여 포인트 </th>
+        <td mat-cell *matCellDef="let row"> {{row.remainPoint}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="studyNum">
+        <th mat-header-cell *matHeaderCellDef> 수강 횟수 </th>
+        <td mat-cell *matCellDef="let row"> {{row.studyNum}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="interest">
+        <th mat-header-cell *matHeaderCellDef> 관심 사항 </th>
+        <td mat-cell *matCellDef="let row"> - </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dateIn">
+        <th mat-header-cell *matHeaderCellDef> 가입 일자 </th>
+        <td mat-cell *matCellDef="let row"> {{row.dateIn}} </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: tableColumns;" (click)="Detail();"></tr>
+  
+    </table>
+  </div>
+  

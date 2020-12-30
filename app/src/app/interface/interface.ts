@@ -6,23 +6,32 @@ export const TAGS : Record<string, string> = {
   SENIORLIST: 'seniorList',
   SENIORPRESENTLIST: 'seniorPresentList',
   ACTIVITYLIST: 'activityList',
-  WORKERLIST: 'workerList',
   TASKLIST: 'taskList',
   CCTVLIST: 'cctvList',
   NOTICELIST: 'noticeList',
-  CENTERA: 'centerA',
-  CENTERB: 'centerB',
   VIDEOS: 'videos',
   DIETARYS: 'dietary',
   VDETAIL: 'vdetail',
   NOTICEADD: 'noticeAdd',
   SENIORDETAIL: 'seniorDetail/:id',
-  ATTENDANCE: 'attendance',
-  ATTENDANTS: 'attendants',
   SCHEDULE: 'schedule',
   PHOTOBOOK: 'photobook',
   TASKADD: 'taskAdd',
   CCTVDETAIL: 'cctvDetail',
+  READY: 'ready',
+  TEACHER: 'teacher',
+  TECHERDETAIL: 'techerDetail',
+  LECTURELIST: 'lectureList',
+  LECTUREENROLL : 'lectureEnroll',
+  LECTUREDETAIL : 'lectureDetail',
+  LECTURECALENDAR : 'lectureCalendar',
+  COMPANYLIST: 'companyList',
+  COMPANYDETAIL: 'companyDetail',
+  COMPANYENROLL: 'companyEnroll',
+  CUSTOMERLIST: 'customerList',
+  CUSTOMERDETAIL: 'customerDetail',
+  SERVICELIST:'serviceList',
+  SERVICEDETAIL: 'serviceDetail'
 } 
 
 export interface AsideItem {
@@ -44,35 +53,35 @@ export const ASIDELISTS: AsideItem[] = [
     icon:"perm_identity",
     subItem: [
       {
-        path: TAGS.SENIORLIST,
+        path: TAGS.READY,
         name: '승인대기목록',
         icon:"person_add",
       },
       {
-        path: TAGS.ATTENDANCE,
+        path: TAGS.TEACHER,
         name: '강사목록',
         icon:"people",
       },
     ] 
   },
   { 
-    path: TAGS.CCTVLIST,
+    path: '',
     name: '강의 관리' ,
     icon: "laptop_windows",
     subItem:[
       { 
-        path: TAGS.DEVICELIST,
+        path: TAGS.LECTURELIST,
         name: '강의 목록' ,
         icon: "list",
       },
       { 
-        path: TAGS.WORKERLIST, 
+        path: TAGS.LECTUREENROLL, 
         name: '강의 등록' ,
         icon: "library_add_check",
         
       },
       { 
-        path: TAGS.SCHEDULE,
+        path: TAGS.LECTURECALENDAR,
         name: '강의 일정표',
         icon: 'calendar_today',
 
@@ -80,58 +89,35 @@ export const ASIDELISTS: AsideItem[] = [
     ]
   },  
   { 
-    path: TAGS.ACTIVATE, 
+    path: '', 
     name: '고객사 관리' ,
     icon: "domain",
     subItem: [
       {
-        path: TAGS.ACTIVITYLIST,
+        path: TAGS.COMPANYLIST,
         name: '고객사 목록',
         icon: 'list',
       },
       
       { 
-        path: TAGS.PHOTOBOOK,
+        path: TAGS.COMPANYENROLL,
         name: '고객사 등록',
         icon: 'add_business',
       },
     ]
   },
   { 
-    path: TAGS.TASKLIST, 
+    path: TAGS.CUSTOMERLIST, 
     name: '수강회원 관리' ,
     icon: 'person_search'
   },
-  // { 
-  //   path: TAGS.OTHERS, 
-  //   name: '자료 센터',
-  //   icon: 'book_online',
-  //   subItem: [
-  //     {
-  //       path: TAGS.NOTICELIST,
-  //       name: '공지 사항',
-  //       icon: 'sms',
-  //     },
-  //     { 
-  //       path: TAGS.VIDEOS,
-  //       name: '동영상',
-  //       icon: 'video_library',
-
-  //     },
-  //     { 
-  //       path: TAGS.DIETARYS,
-  //       name: '식단표',
-  //       icon: 'restaurant',
-  //     },
-  //   ]
-  // },
   { 
     path: '',
     name: '고객 센터',
     icon:"support_agent",
     subItem: [
       {
-        path: TAGS.CENTERA,
+        path: TAGS.SERVICELIST,
         name: '시스템 문의',
         icon:"cast",
       },
@@ -275,43 +261,7 @@ export const SENIORS: Senior[] = [
   { id: 10, photo: '2.jpg', name: '진모모', contact:"010-9550-8470" ,gender: '남', age: 63, temp: '36.5',  desc: '', guardian: '김경민', latest: '지난 달', center: '시설B',guardianContact:"010-9550-8470"},
 ]
 
-export interface Worker {
-  task : string;
-  name : string;
-  contact : string;
-  center : string;
-  region : string;
-  date : string;
-}
 
-export const workerHeader: string[] = ['task', 'name', 'contact', 'center', 'region', 'date'];
-
-export const workerFilter: Filter = {
-  name: '전체',
-  completed: false,
-  color: 'primary',
-  subFilters: [
-    {name: '보건', completed: false, color: 'primary'},
-    {name: '레크리에이터', completed: false, color: 'primary'},
-    {name: '자원봉사자', completed: false, color: 'primary'},
-    {name: '노래교실', completed: false, color: 'primary'},
-    {name: '볼링', completed: false, color: 'primary'},
-    {name: '요양보호사', completed: false, color: 'primary'},
-  ]
-}
-
-export const WORKERS: Worker[] = [
-  { name : '윤모모', contact : '010-0000-0000', center : '시설A', region : '경기도', date: '10/15', task : '보건' },
-  { name : '김모모', contact : '010-0000-0000', center : '시설B', region : '김천', date: '10/17', task : '레크리에이터' },
-  { name : '허모모', contact : '010-0000-0000', center : '시설C', region : '경기도', date: '', task : '자원봉사자' },
-  { name : '서모모', contact : '010-0000-0000', center : '시설A', region : '김천', date: '10/22', task : '자원봉사자' },
-  { name : '윤모모', contact : '010-0000-0000', center : '시설B', region : '경기도', date: '10/26', task : '노래교실' },
-  { name : '강모모', contact : '010-0000-0000', center : '시설C', region : '김천', date: '', task : '볼링' },
-  { name : '고모모', contact : '010-0000-0000', center : '시설A', region : '경기도', date: '11/05', task : '자원봉사자' },
-  { name : '하모모', contact : '010-0000-0000', center : '시설B', region : '김천', date: '11/17', task : '보건' },
-  { name : '정모모', contact : '010-0000-0000', center : '시설C', region : '경기도', date: '11/20', task : '자원봉사자' },
-  { name : '이모모', contact : '010-0000-0000', center : '시설A', region : '김천', date: '', task : '볼링' },
-]
 
 export interface Activity {
   task : string;
@@ -586,5 +536,185 @@ export const ATTENDANCE: Attendance[] = [
   {id:10,date:'20/12/01',attand:40, strange:0, center: "요셉주간보호센터"},
   {id:11,date:'20/12/01',attand:40, strange:0, center: "녹양주간보호센터"},
   {id:12,date:'20/12/01',attand:40, strange:0, center: "요셉주간보호센터"},
+
+]
+// 강의 
+export interface dashlecture {
+  id : number;
+  title : string;
+  teacher : string;
+  students : number;
+  date : string;
+  point? : number;
+  
+}
+export const TODAYLECTURE : dashlecture[] = [
+  {id:1,title:"마음챙김 영상", teacher:'유재석', students: 8 ,date:'20.12.01 14:00',point : 8.2},
+  {id:2,title:"아로마 힐링 핸드 터치", teacher:'이효리', students: 15 ,date:'20.12.01 17:00',point : 8.3},
+  {id:3,title:"잠 잘 자기 수면교육", teacher:'정재훈', students: 8 ,date:'20/12/01 10:00',point : 7.5},
+  
+]
+
+export const BESTLECTURE : dashlecture[] = [
+  {id:1,title:"슬기로운 아빠 생활", teacher:'이슬기', students: 8 ,date:'20.12.01 14:00',point : 10},
+  {id:2,title:"MBTI로 나를 알아가기", teacher:'박엠비', students: 15 ,date:'20.12.01 17:00',point : 9.9},
+  {id:3,title:"다름으로 완성하는 팀 빌딩", teacher:'김빌딩', students: 8 ,date:'20/12/01 10:00',point : 9.9},
+]
+
+// 승인대기
+export interface ready {
+  id:number;
+  name: string;
+  divCause:string;
+  divResult:string;
+  date: string;
+  ready?:string;
+  delete?:string;
+}
+export const READY : ready[] = [
+  {id:1,name:'김모모', divCause:"업무", divResult:'정서정 증상', date:'20.12.01'},
+  {id:2,name:'윤모모', divCause:"힐링", divResult:'행동적 증상', date:'20.12.01'},
+  {id:3,name:'박모모', divCause:"라이프", divResult:'정서적 증상', date:'20.12.01'},
+  {id:4,name:'최모모', divCause:"라이프", divResult:'정서적 증상', date:'20.12.01'},
+  {id:5,name:'김깽미', divCause:"업무", divResult:'인지적 증상', date:'20.12.01'},
+]
+//강사
+export interface teacher {
+  id:number;
+  name: string;
+  divCause:string;
+  divResult:string;
+  lectureNum: number;
+  lastdate: string;
+  student: number;
+  point? : number;
+  delete?:string;
+}
+
+export const TEACHER : teacher[] = [
+  {id:1,name:'김모모', divCause:"업무", divResult:'정서정 증상', lectureNum: 5, lastdate:"20.12.30", student: 30, point : 10},
+  {id:2,name:'윤모모', divCause:"힐링", divResult:'행동적 증상', lectureNum: 5, lastdate:"20.12.30", student: 30, point : 10},
+  {id:3,name:'박모모', divCause:"라이프", divResult:'정서적 증상', lectureNum: 5, lastdate:"20.12.30", student: 30, point : 10},
+  {id:4,name:'최모모', divCause:"라이프", divResult:'정서적 증상', lectureNum: 5, lastdate:"20.12.30", student: 30, point : 10},
+  {id:5,name:'김깽미', divCause:"업무", divResult:'인지적 증상', lectureNum: 5, lastdate:"20.12.30", student: 30, point : 10},
+]
+// 강의
+export interface lecturelist {
+  id:number;
+  date:string;
+  divCause: string;
+  divResult: string;
+  title: string;
+  name: string;
+  point : string;
+  good: number;
+  number: number;
+  delete?: string;
+}
+export const LECTURELIST : lecturelist[] = [
+  {id:1, date:'12.7', divCause:"업무", divResult:'정서정 증상', title:'마음챙김 영상' ,name: '김모모', point:'18,000', good:8.2, number:15},
+  {id:2, date:'12.7', divCause:"업무", divResult:'정서정 증상', title:'마음챙김 영상' ,name: '김모모', point:'18,000', good:8.2, number:15},
+  {id:3, date:'12.7', divCause:"업무", divResult:'정서정 증상', title:'마음챙김 영상' ,name: '김모모', point:'18,000', good:8.2, number:15},
+  {id:4, date:'12.7', divCause:"업무", divResult:'정서정 증상', title:'마음챙김 영상' ,name: '김모모', point:'18,000', good:8.2, number:15},
+  {id:5, date:'12.7', divCause:"업무", divResult:'정서정 증상', title:'마음챙김 영상' ,name: '김모모', point:'18,000', good:8.2, number:15},
+  {id:6, date:'12.7', divCause:"업무", divResult:'정서정 증상', title:'마음챙김 영상' ,name: '김모모', point:'18,000', good:8.2, number:15},
+  {id:7, date:'12.7', divCause:"업무", divResult:'정서정 증상', title:'마음챙김 영상' ,name: '김모모', point:'18,000', good:8.2, number:15},
+]
+//수강자
+export interface student {
+  id:number;
+  name: string;
+  belong : string;
+  enrollDate : string;
+  condition : string;
+  cancel: string;
+}
+export const STUDENTSLIST : student[] = [
+  {id:1, name:'김모모',belong: '한국공항공사', enrollDate:'11.27', condition:"수강 중" , cancel:""},
+  {id:2, name:'김모모',belong: '한국철도공사', enrollDate:'11.27', condition:"수강 중" , cancel:""},
+  {id:3, name:'김모모',belong: '경찰청', enrollDate:'11.27', condition:"수강 중" , cancel:""},
+  {id:4, name:'김모모',belong: '수자원공사', enrollDate:'11.27', condition:"수강 중" , cancel:""},
+  {id:5, name:'김모모',belong: '한국공항공사', enrollDate:'11.27', condition:"수강 중" , cancel:""},
+]
+// 고객사
+export interface company {
+  id:number;
+  name:string;
+  start:string;
+  end: string;
+  totalPoint:string;
+  alivePoint:string;
+  personalPoint: string;
+  workerNum: number;
+  manager: string;
+  contact: string;
+  email?: string;
+}
+export const COMPANYLIST : company[] = [
+  {id:1, name:'한국공항공사',start: '2020.2.11', end:'2020.11.27', totalPoint:'12,000,000' , alivePoint:"2,750,000",personalPoint:"75,000", workerNum:27,manager:'깽미',contact:'010-000-0000'},
+  {id:2, name:'한국철도공사',start: '2020.2.11', end:'2020.11.27', totalPoint:'12,000,000' , alivePoint:"2,750,000",personalPoint:"75,000", workerNum:27,manager:'깽미',contact:'010-000-0000'},
+  {id:3, name:'경찰청',start: '2020.2.11', end:'2020.11.27', totalPoint:'12,000,000' , alivePoint:"2,750,000",personalPoint:"75,000", workerNum:27,manager:'깽미',contact:'010-000-0000'},
+  {id:4, name:'소방청',start: '2020.2.11', end:'2020.11.27', totalPoint:'12,000,000' , alivePoint:"2,750,000",personalPoint:"75,000", workerNum:27,manager:'깽미',contact:'010-000-0000'},
+
+]
+// 포인트 사용
+export interface point {
+  id:number;
+  date:string;
+  name:string;
+  price?:string;
+  point:string;
+  title?:string;
+  desc?:string;
+  condition?:string;
+  good?:number;
+}
+export const POINTCHARGE : point[] = [
+  {id:1, date:'12.7',name: '깽미', price:'6,000,000 원', point:'6,000,000 p' , desc:"12월 7일 - 바우처 활용 포인트 충전", condition:"승인"},
+]
+export const POINTUSEAGE : point[] = [
+  {id:1, date:'12.7',name: '김모모', point:'20,000 p' , title:"바쁠수록 차분하게, 마음챙김 영상", good:10},
+  {id:2, date:'12.7',name: '이모모', point:'20,000 p' , title:"바쁠수록 차분하게, 마음챙김 영상", good:10},
+  {id:3, date:'12.7',name: '박모모', point:'20,000 p' , title:"바쁠수록 차분하게, 마음챙김 영상", good:10},
+  {id:4, date:'12.7',name: '최모모', point:'20,000 p' , title:"바쁠수록 차분하게, 마음챙김 영상", good:10},
+  {id:5, date:'12.7',name: '문모모', point:'20,000 p' , title:"바쁠수록 차분하게, 마음챙김 영상", good:10},
+]
+// 직원
+export interface worker {
+  id:number;
+  name:string;
+  part:string;
+  grade:string;
+  gender:string;
+  TotalUsePoint:string;
+  remainPoint?:string;
+  workLocation:string;
+  contact?:string;
+  delete?:string;
+  age?: number;
+  studyNum?:number;
+  interest?:string;
+  dateIn?:string;
+  belong?:string;
+}
+export const WORKERLIST : worker[] = [
+  {id:1, name: '김모모',age:27,belong: '한국공항공사', part:"연구개발", grade:"연구원", gender:"남", TotalUsePoint:'20,000 p' ,remainPoint:'5,000 p',studyNum:1 ,workLocation:"경기도", dateIn:'20.12.30'},
+  {id:2, name: '이모모',age:34,belong: '한국철도공사', part:"홍보", grade:"팀장", gender:"여", TotalUsePoint:'20,000 p' ,remainPoint:'5,000 p',studyNum:1 ,workLocation:"경기도", dateIn:'20.12.30'},
+  {id:3, name: '박모모',age:50,belong: '경찰청', part:"기획", grade:"부장", gender:"여", TotalUsePoint:'20,000 p' ,remainPoint:'5,000 p',studyNum:1 ,workLocation:"경기도", dateIn:'20.12.30'},
+  {id:4, name: '최모모',age:38,belong: '수자원공사', part:"총무", grade:"과장", gender:"남", TotalUsePoint:'20,000 p' ,remainPoint:'5,000 p',studyNum:1 ,workLocation:"경기도", dateIn:'20.12.30'},
+  {id:5, name: '문모모',age:27,belong: '한국공항공사', part:"영업", grade:"대리", gender:"남", TotalUsePoint:'20,000 p' ,remainPoint:'5,000 p',studyNum:1 ,workLocation:"경기도", dateIn:'20.12.30'},
+]
+
+// 수강내역 
+export interface studyinfo {
+id:number;
+point:string;
+title:string;
+name:string;
+condition:string;
+good:string;
+
+}
+export const STUDYINFO : studyinfo[] = [
 
 ]

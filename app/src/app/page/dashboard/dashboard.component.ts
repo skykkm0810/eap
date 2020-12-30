@@ -1,13 +1,10 @@
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { ChartDataSets, ChartOptions } from 'chart.js';
 import { Color, Label } from 'ng2-charts';
-import {REQUESTS , Request} from '../../interface/interface';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { log,LOG } from '../../interface/interface';
-import { weather,WEATHER } from '../../interface/interface';
-import { covid,COVID } from '../../interface/interface';
+import {dashlecture , TODAYLECTURE, BESTLECTURE} from '../../interface/interface';
 
 
 
@@ -17,37 +14,23 @@ import { covid,COVID } from '../../interface/interface';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements AfterViewInit {
-  requestColumns: string[] = ["id","progress","from","desc","who"];
-  requestData: MatTableDataSource<Request>;
-  logColumns: string[] = ["id",'name','type','center','time','desc'];
-  logData: MatTableDataSource<log>;
-  weatherColumns: string[] = ["id",'center','todayT','todayW','tmrrwT','tmrrwW'];
-  weatherData: MatTableDataSource<weather>;
-  covidColumns: string[] = ["id",'date','location','new','total','desc'];
-  covidData: MatTableDataSource<covid>;
+  todayColumns: string[] = ["teacher","title","students","date"];
+  todayData: MatTableDataSource<dashlecture>;
+  bestColumns: string[] = ["teacher","title","students","point"];
+  bestData: MatTableDataSource<dashlecture>;
   @ViewChild('pagnator1') paginator1: MatPaginator;
   @ViewChild('pagnator2') paginator2: MatPaginator;
-  @ViewChild('pagnator3') paginator3: MatPaginator;
-  @ViewChild('pagnator4') paginator4: MatPaginator;
   @ViewChild('sort1') sort1: MatSort;
   @ViewChild('sort2') sort2: MatSort;
-  @ViewChild('sort3') sort3: MatSort;
-  @ViewChild('sort4') sort4: MatSort;
   constructor() {
-    this.requestData = new MatTableDataSource(REQUESTS);
-    this.logData = new MatTableDataSource(LOG);
-    this.weatherData = new MatTableDataSource(WEATHER);
-    this.covidData = new MatTableDataSource(COVID);
+    this.todayData = new MatTableDataSource(TODAYLECTURE);
+    this.bestData = new MatTableDataSource(BESTLECTURE);
    }
    ngAfterViewInit(): void {
-    this.requestData.paginator = this.paginator1;
-    this.requestData.sort = this.sort1;
-    this.logData.paginator = this.paginator2;
-    this.logData.sort = this.sort2;
-    this.weatherData.paginator = this.paginator3;
-    this.weatherData.sort = this.sort3;
-    this.covidData.paginator = this.paginator4;
-    this.covidData.sort = this.sort4;
+    this.todayData.paginator = this.paginator1;
+    this.todayData.sort = this.sort1;
+    this.bestData.paginator = this.paginator2;
+    this.bestData.sort = this.sort2;
   }
   
   public lineChartData: ChartDataSets[] = [

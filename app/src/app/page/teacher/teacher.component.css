@@ -1,0 +1,20 @@
+.delete {
+    color:red;
+}
+.header {
+    line-height: 36px;
+}
+.header .title {
+    padding-right:50px;
+}
+.header button {
+    margin:0 10px;
+    color:#fff;
+
+}
+.header .download {
+    background-color: greenyellow;
+}
+.header .addTeacher {
+    background-color: hotpink;
+}

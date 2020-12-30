@@ -1,0 +1,13 @@
+.header {
+    line-height: 36px;
+}
+.title { 
+    padding-right: 50px;
+}
+.download {
+    background-color: khaki;
+    color:#fff;
+}
+.delete{
+    color:red;
+}

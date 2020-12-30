@@ -1,0 +1,188 @@
+<mat-tab-group>
+  <mat-tab label="고객사 정보">
+    <section class="first">
+      <p>
+        <span class="label">고객사명</span>
+        <span class="contents">한국국한공사</span>
+      </p>
+      <p>
+        <span class="label">담당자명</span>
+        <span class="contents">김모모</span>
+      </p>
+      <p>
+        <span class="label">사업자등록번호</span>
+        <span class="contents">000-00-00000</span>
+      </p>
+      <p>
+        <span class="label">식별코드</span>
+        <span class="contents">P000000</span>
+      </p>
+      <p>
+        <span class="label">연락처</span>
+        <span class="contents"> 010-0000-0000</span>
+      </p>
+      <p>
+        <span class="label">이메일</span>
+        <span class="contents"> = </span>
+      </p>
+      <p>
+        <span class="label">계약기간</span>
+        <span class="contents">2020년 11월 11일 - 2020년 12월 12일</span>
+      </p>
+      <p>
+        <span class="label">총 계약 금액</span>
+        <span class="contents">12,000,000 원</span>
+      </p>
+      <p>
+        <span class="label">총 포인트</span>
+        <span class="contents">13,200,000 p</span>
+      </p>
+      <p class="addContract">
+        <span class="label">추가 계약</span>
+        <span class="contents">6,000,000원 / 6,600,000 p / 2020.11.27</span>
+        <!-- <button mat-button>+</button> -->
+      </p>
+      <p>
+        <span class="label">직원 당 포인트</span>
+        <span class="contents">120,000 p</span>
+      </p>
+      <p>
+        <span class="label"> 업종</span>
+        <span class="contents"> - </span>
+      </p>
+      <p>
+        <span class="label">주소</span>
+        <span class="contents"> - </span>
+      </p>
+
+    </section>
+  </mat-tab>
+  <mat-tab label='포인트 활용 내역'>
+    <section class="second">
+      <div class="chargeTable m-b-20">
+        <p>포인트 충전 내역</p>
+        <table mat-table [dataSource]="table1Data" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> 일시 </th>
+            <td mat-cell *matCellDef="let row"> {{row.date}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> 담당자 </th>
+            <td mat-cell *matCellDef="let row"> {{row.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> 금액 </th>
+            <td mat-cell *matCellDef="let row"> {{row.price}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="point">
+            <th mat-header-cell *matHeaderCellDef> 포인트 </th>
+            <td mat-cell *matCellDef="let row"> {{row.point}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="desc">
+            <th mat-header-cell *matHeaderCellDef> 내용 </th>
+            <td mat-cell *matCellDef="let row"> {{row.desc}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="condition">
+            <th mat-header-cell *matHeaderCellDef> 상태 </th>
+            <td mat-cell *matCellDef="let row"> {{row.condition}}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="table1Columns"></tr>
+          <tr mat-row *matRowDef="let row; columns: table1Columns;"></tr>
+
+        </table>
+      </div>
+      <div class="useageTable">
+        <p>포인트 사용 내역</p>
+        <table mat-table [dataSource]="table2Data" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="date">
+            <th mat-header-cell *matHeaderCellDef> 이름 </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.date}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> 소속 </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.name}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="point">
+            <th mat-header-cell *matHeaderCellDef> 신청일 </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.point}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef> 수강상태 </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.title}} </td>
+          </ng-container>
+
+          <ng-container matColumnDef="good">
+            <th mat-header-cell *matHeaderCellDef> 신청 취소 </th>
+            <td mat-cell *matCellDef="let row2"> {{row2.good}}</td>
+          </ng-container>
+
+          <tr mat-header-row *matHeaderRowDef="table2Columns"></tr>
+          <tr mat-row *matRowDef="let row2; columns: table2Columns;"></tr>
+
+        </table>
+      </div>
+    </section>
+  </mat-tab>
+  <mat-tab label="소속 회원 목록">
+    <section class="third">
+      <table mat-table [dataSource]="table3Data" class="mat-elevation-z8">
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> 이름 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="part">
+          <th mat-header-cell *matHeaderCellDef> 부서 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.part}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="grade">
+          <th mat-header-cell *matHeaderCellDef> 직급 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.grade}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="gender">
+          <th mat-header-cell *matHeaderCellDef> 성별 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.gender}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="TotalUsePoint">
+          <th mat-header-cell *matHeaderCellDef> 수강상태 </th>
+          <td mat-cell *matCellDef="let row3"> {{row3.TotalUsePoint}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="workLocation">
+            <th mat-header-cell *matHeaderCellDef> 근무 지역 </th>
+            <td mat-cell *matCellDef="let row3"> {{row3.workLocation}} </td>
+          </ng-container>
+        
+        <ng-container matColumnDef="contact">
+          <th mat-header-cell *matHeaderCellDef> 연락처 </th>
+          <td mat-cell *matCellDef="let row3"> - </td>
+        </ng-container>
+
+        <ng-container matColumnDef="delete">
+          <th mat-header-cell *matHeaderCellDef> 신청 취소 </th>
+          <td mat-cell *matCellDef="let row3"> <a href="#" class="delete"> 취소 하기</a></td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="table3Columns"></tr>
+        <tr mat-row *matRowDef="let row3; columns: table3Columns;"></tr>
+
+      </table>
+    </section>
+  </mat-tab>
+</mat-tab-group>
