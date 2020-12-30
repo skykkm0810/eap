@@ -2,78 +2,93 @@
   <span>강의 등록하기</span>
 </mat-card>
 <section class="enroll">
-    <form action="">
+  <form action="">
 
-        <div class="img">
-            <p class="thum">
-      <span class="label">
+    <div class="img">
+      <p class="thum">
+        <span class="label">
           <!-- <span class="buttonBox">
               <button class="filebutton minus"> - </button>
               <button class="filebutton plus"> + </button>
             </span> -->
-            썸네일
+          썸네일
         </span>
         <input type="file" name="thumnail" class="file">
-    </p>
-  </div>
-  <p>
+      </p>
+    </div>
+    <p>
       <span class="label">강의명</span>
-      <input type="text" name="" class="contents">
+      <mat-form-field class="contents">
+        <input matInput>
+      </mat-form-field>
     </p>
     <p>
-        <span class="label">강의 소제목</span>
-        <input type="text" name="" class="contents">
-  </p>
-  <p>
+      <span class="label">강의 소제목</span>
+      <mat-form-field class="contents">
+        <input matInput>
+      </mat-form-field>
+    </p>
+    <p>
       <span class="label">강사명</span>
-    <input type="text" name="" class="contents">
-</p>
-  <p>
-      <span class="label">참가 대상</span>
-      <input type="text" name="" class="contents">
-  </p>
-  <p>
-      <span class="label">강의 개요</span>
-    <input type="text" name="" class="contents">
-</p>
-<p>
-    <span class="label">강의 특징</span>
-    <input type="text" name="" class="contents">
-</p>
-<p>
-    <span class="label">문의처</span>
-    <input type="text" name="" class="contents">
-</p>
-<p>
-    <span class="label">진행 일정</span>
-    <input type="text" name="" class="contents">
-</p>
-<p>
-    <span class="label">수강 포인트</span>
-    <input type="text" name="" class="contents">
-  </p>
-  <p>
-      <span class="label">수강 인원</span>
-      <input type="text" name="" class="contents">
-  </p>
-  <p>
-      <span class="label">줌링크 / pw</span>
-      <input type="text" name="" class="contents">
+      <mat-form-field class="contents">
+        <input matInput>
+      </mat-form-field>
     </p>
     <p>
-        <span class="label">전문분야 - 원인</span>
-        <input type="text" name="" class="contents">
+      <span class="label">참가 대상</span>
+      <mat-form-field class="contents">
+        <input matInput>
+      </mat-form-field>
     </p>
-  <p>
-      <span class="label">전문분야 - 결과</span>
-      <input type="text" name="" class="contents">
+    <p>
+      <span class="label">강의 개요</span>
+      <mat-form-field class="contents">
+        <input matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <span class="label">강의 특징</span>
+      <mat-form-field class="contents">
+        <input matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <span class="label">문의처</span>
+      <mat-form-field class="contents">
+        <input matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <span class="label">진행 일정</span>
+      <mat-form-field class="contents">
+        <input matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <span class="label">수강 포인트</span>
+      <mat-form-field class="contents">
+        <input matInput>
+      </mat-form-field>
+    </p>
+    <p>
+      <span class="label">수강 인원</span>
+      <mat-form-field class="contents">
+        <input matInput>
+      </mat-form-field>
     </p>
     <p class="table">
-    <span class="label"> 커리큘럼</span>
-    <input type="text" name="" class="contents">
-</p>
-<div class="submitBox">
-    <button mat-button class="submit">등록하기</button>
-</div>
-</form>
+      <span class="label"> 커리큘럼</span>
+      <span class="contents curriculum">
+        <span class="sublabel">1</span>
+        <mat-form-field class="subcontents">
+          <input matInput>
+        </mat-form-field>
+        <mat-icon class="minus">remove_circle_outline</mat-icon>
+      </span>
+      <button class="add">+</button>
+    </p>
+    <div class="submitBox">
+      <button mat-button class="submit">등록하기</button>
+    </div>
+  </form>
 </section>

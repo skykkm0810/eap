@@ -43,5 +43,10 @@ export class LectureDetailComponent implements AfterViewInit {
     this.table2Data.paginator = this.paginator2;
     this.table2Data.sort = this.sort2;
   }
+  clearTable(obj) {
+    var index = this.tableData.data.indexOf(obj);
+    this.tableData.data.splice(index,1)
+    this.tableData = new MatTableDataSource<student>(STUDENTSLIST);
+  }
   
 }

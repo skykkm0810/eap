@@ -32,6 +32,11 @@
     width:80%;
     padding-left: 50px;
 }
-.second .pointTable {
-    padding:1rem;
+
+table .mat-header-row {
+    background-color: gray;
+}
+table .mat-header-row .mat-header-cell {
+    color:#fff;
+    font-size: 0.9rem;
 }

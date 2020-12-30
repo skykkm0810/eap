@@ -27,3 +27,14 @@
 .third .delete {
     color:red;
 }
+table .mat-header-row {
+    background-color: gray;
+}
+table .mat-header-row .mat-header-cell {
+    color:#fff;
+    font-size: 0.9rem;
+}
+.tableTitle {
+    padding: 15px 0 15px 5px;
+
+}

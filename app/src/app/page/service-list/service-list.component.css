@@ -1,0 +1,22 @@
+.header {
+    line-height: 36px;
+}
+.download {
+    background-color: khaki;
+    color:#fff;
+    float:right;
+}
+.delete{
+    color:red;
+}
+table .mat-header-row {
+    background-color: gray;
+}
+table .mat-header-row .mat-header-cell {
+    color:#fff;
+    font-size: 0.9rem;
+}
+table .mat-row:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    cursor:pointer;
+}

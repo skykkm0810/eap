@@ -21,6 +21,7 @@ export const TAGS : Record<string, string> = {
   READY: 'ready',
   TEACHER: 'teacher',
   TECHERDETAIL: 'techerDetail',
+  TEACHERENROLL: 'teacherEnroll',
   LECTURELIST: 'lectureList',
   LECTUREENROLL : 'lectureEnroll',
   LECTUREDETAIL : 'lectureDetail',
@@ -33,7 +34,6 @@ export const TAGS : Record<string, string> = {
   SERVICELIST:'serviceList',
   SERVICEDETAIL: 'serviceDetail'
 } 
-
 export interface AsideItem {
   path: string;
   name: string;
@@ -80,12 +80,12 @@ export const ASIDELISTS: AsideItem[] = [
         icon: "library_add_check",
         
       },
-      { 
-        path: TAGS.LECTURECALENDAR,
-        name: '강의 일정표',
-        icon: 'calendar_today',
+      // { 
+      //   path: TAGS.LECTURECALENDAR,
+      //   name: '강의 일정표',
+      //   icon: 'calendar_today',
 
-      },
+      // },
     ]
   },  
   { 
@@ -630,11 +630,11 @@ export interface student {
   cancel: string;
 }
 export const STUDENTSLIST : student[] = [
-  {id:1, name:'김모모',belong: '한국공항공사', enrollDate:'11.27', condition:"수강 중" , cancel:""},
-  {id:2, name:'김모모',belong: '한국철도공사', enrollDate:'11.27', condition:"수강 중" , cancel:""},
-  {id:3, name:'김모모',belong: '경찰청', enrollDate:'11.27', condition:"수강 중" , cancel:""},
-  {id:4, name:'김모모',belong: '수자원공사', enrollDate:'11.27', condition:"수강 중" , cancel:""},
-  {id:5, name:'김모모',belong: '한국공항공사', enrollDate:'11.27', condition:"수강 중" , cancel:""},
+  {id:1, name:'김모모',belong: '한국공항공사', enrollDate:'11.27', condition:"수강 예정" , cancel:""},
+  {id:2, name:'김모모',belong: '한국철도공사', enrollDate:'11.27', condition:"수강 예정" , cancel:""},
+  {id:3, name:'김모모',belong: '경찰청', enrollDate:'11.27', condition:"수강 예정" , cancel:""},
+  {id:4, name:'김모모',belong: '수자원공사', enrollDate:'11.27', condition:"수강 예정" , cancel:""},
+  {id:5, name:'김모모',belong: '한국공항공사', enrollDate:'11.27', condition:"수강 예정" , cancel:""},
 ]
 // 고객사
 export interface company {
@@ -720,4 +720,23 @@ export const STUDYINFO : studyinfo[] = [
  {id:1,date:'12.17', point:'20,000 p', title:'바쁠수록 차분하게, 마음챙김 영상',name:'김모모',condition:'수강 대기', good:'10'},
  {id:2,date:'12.17', point:'20,000 p', title:'바쁠수록 차분하게, 마음챙김 영상',name:'이모모',condition:'수강 대기', good:'10'},
  {id:3,date:'12.17', point:'20,000 p', title:'바쁠수록 차분하게, 마음챙김 영상',name:'박모모',condition:'수강 대기', good:'10'},
+]
+// 고객센터
+
+export interface customerService{
+  id:number;
+  kind:string;
+  title:string;
+  date:string;
+  name:string;
+  contact:string;
+  condition:string;
+  delete?:string;
+}
+
+export const CUSTOMERSERVICE : customerService[] = [
+ {id:1005,kind:'수강 신청', title:'수강 신청을 했는데 수강 상태를 확인할 수 없어요.', date:'20.11.26',name:'김모모',contact:'010-0000-0000', condition:'미확인'},
+ {id:1004,kind:'포인트 사용', title:'포인트가 남아있는데 사용할 수가 없어요', date:'20.11.26',name:'이모군',contact:'010-0000-0000', condition:'처리 중'},
+ {id:1003,kind:'수강 취소', title:'업무 때문에 일정이 변경되어 수강취소를 요청합니다.', date:'20.11.26',name:'박모양',contact:'010-0000-0000', condition:'답변 완료'},
+
 ]

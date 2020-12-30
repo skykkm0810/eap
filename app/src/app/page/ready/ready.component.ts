@@ -20,5 +20,9 @@ export class ReadyComponent implements AfterViewInit {
   ngAfterViewInit(): void {
 
   }
-
+  clearTable(obj) {
+    var index = this.readyData.data.indexOf(obj);
+    this.readyData.data.splice(index,1)
+    this.readyData = new MatTableDataSource<ready>(READY);
+  }
 }

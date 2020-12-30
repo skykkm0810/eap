@@ -1,1 +1,52 @@
-<p>service-detail works!</p>
+<mat-card class="m-b-10 header">
+  문의 내용 상세페이지
+  <button mat-button class="download">다운로드</button>
+</mat-card>
+<mat-card>
+  <form action="">
+    <p>
+      <span class="label">번호</span>
+      <span class="contents">1005</span>
+    </p>
+    <p>
+      <span class="label">분류</span>
+      <span class="contents">수강신청</span>
+    </p>
+    <p>
+      <span class="label">제목</span>
+      <span class="contents">수강 신청을 했는데 수강 상태를 확인할 수 없어요.</span>
+    </p>
+    <p>
+      <span class="label">일시</span>
+      <span class="contents">2020. 11. 26</span>
+    </p>
+    <p>
+      <span class="label">문의자</span>
+      <span class="contents"> 김모모 </span>
+    </p>
+    <p>
+      <span class="label">상태</span>
+      <mat-form-field class="contents Process">
+        <mat-label>처리 중</mat-label>
+        <mat-select>
+          <mat-option value="미 확인">미 확인</mat-option>
+          <mat-option value="처리 중">처리 중</mat-option>
+          <mat-option value="답변 완료">답변 완료</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </p>
+    <p class="m-b-20">
+      <span class="label">문의내용</span>
+      <span class="contents">제목과 같습니다. 수강신청을 했는데 수강 상태를 확인을 못하겠습니다. 어디서 하나요?</span>
+    </p>
+    <p class="reply">
+      <mat-form-field>
+        <textarea matInput placeholder="답변하기.."></textarea>
+      </mat-form-field>
+      
+    </p>
+    <div class="submitBox">
+        <button mat-button class="submit">저장 하기</button>
+    </div>
+  </form>
+</mat-card>

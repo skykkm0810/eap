@@ -60,7 +60,7 @@
   <mat-tab label='포인트 활용 내역'>
     <section class="second">
       <div class="chargeTable m-b-20">
-        <p>포인트 충전 내역</p>
+        <p class="tableTitle">포인트 충전 내역</p>
         <table mat-table [dataSource]="table1Data" class="mat-elevation-z8">
 
           <ng-container matColumnDef="date">
@@ -99,31 +99,31 @@
         </table>
       </div>
       <div class="useageTable">
-        <p>포인트 사용 내역</p>
+        <p class="tableTitle">포인트 사용 내역</p>
         <table mat-table [dataSource]="table2Data" class="mat-elevation-z8">
 
           <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef> 이름 </th>
+            <th mat-header-cell *matHeaderCellDef> 일시 </th>
             <td mat-cell *matCellDef="let row2"> {{row2.date}} </td>
           </ng-container>
 
           <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> 소속 </th>
+            <th mat-header-cell *matHeaderCellDef> 회원명 </th>
             <td mat-cell *matCellDef="let row2"> {{row2.name}} </td>
           </ng-container>
 
           <ng-container matColumnDef="point">
-            <th mat-header-cell *matHeaderCellDef> 신청일 </th>
+            <th mat-header-cell *matHeaderCellDef> 포인트 </th>
             <td mat-cell *matCellDef="let row2"> {{row2.point}} </td>
           </ng-container>
 
           <ng-container matColumnDef="title">
-            <th mat-header-cell *matHeaderCellDef> 수강상태 </th>
+            <th mat-header-cell *matHeaderCellDef> 강의명 </th>
             <td mat-cell *matCellDef="let row2"> {{row2.title}} </td>
           </ng-container>
 
           <ng-container matColumnDef="good">
-            <th mat-header-cell *matHeaderCellDef> 신청 취소 </th>
+            <th mat-header-cell *matHeaderCellDef> 만족도 </th>
             <td mat-cell *matCellDef="let row2"> {{row2.good}}</td>
           </ng-container>
 

@@ -1,0 +1,38 @@
+.header {
+    line-height: 36px;
+}
+.download {
+    float:right;
+    background-color: khaki;
+    color:#fff;
+}
+.label {
+    width:100px;
+    display: inline-block;
+    font-weight: bold;
+    text-align: right;
+}
+.contents {
+    padding-left: 50px;
+    width:80%;
+    display: inline-block;
+
+}
+.Process {
+    width:200px;
+}
+.reply {
+    text-align: center;
+    padding:3rem 2rem 0;
+}
+.reply .mat-form-field {
+    min-width: 300px;
+}
+.submitBox {
+    padding:2rem;
+    text-align: center;
+}
+.submitBox button {
+    background-color: orange;
+    color:#fff;
+}

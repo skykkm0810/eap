@@ -14,6 +14,7 @@ import { CctvDetailComponent } from './page/cctv-detail/cctv-detail.component';
 import { ReadyComponent } from './page/ready/ready.component';
 import { TeacherComponent } from './page/teacher/teacher.component';
 import { TecherDetailComponent } from './page/techer-detail/techer-detail.component';
+import { TeacherEnrollComponent } from './page/teacher-enroll/teacher-enroll.component';
 import { LectureListComponent } from './page/lecture-list/lecture-list.component';
 import { LectureDetailComponent } from './page/lecture-detail/lecture-detail.component';
 import { LectureEnrollComponent } from './page/lecture-enroll/lecture-enroll.component';
@@ -24,6 +25,7 @@ import { CompanyEnrollComponent } from './page/company-enroll/company-enroll.com
 import { CustomerListComponent } from './page/customer-list/customer-list.component';
 import { CustomerDetailComponent } from './page/customer-detail/customer-detail.component';
 import { ServiceListComponent } from './page/service-list/service-list.component';
+import { ServiceDetailComponent } from './page/service-detail/service-detail.component';
 
 const routes: Routes = [
   { path: TAGS.DASHBOARD, component: DashboardComponent },
@@ -39,6 +41,7 @@ const routes: Routes = [
   { path: TAGS.READY, component: ReadyComponent },
   { path: TAGS.TEACHER, component: TeacherComponent },
   { path: TAGS.TECHERDETAIL, component: TecherDetailComponent },
+  { path: TAGS.TEACHERENROLL, component: TeacherEnrollComponent },
   { path: TAGS.LECTURELIST, component: LectureListComponent },
   { path: TAGS.LECTUREDETAIL, component: LectureDetailComponent },
   { path: TAGS.LECTUREENROLL, component: LectureEnrollComponent },
@@ -47,6 +50,8 @@ const routes: Routes = [
   { path: TAGS.COMPANYENROLL, component: CompanyEnrollComponent },
   { path: TAGS.CUSTOMERLIST, component: CustomerListComponent },
   { path: TAGS.CUSTOMERDETAIL, component: CustomerDetailComponent },
+  { path: TAGS.SERVICELIST, component: ServiceListComponent },
+  { path: TAGS.SERVICEDETAIL, component: ServiceDetailComponent },
 ];
 
 @NgModule({

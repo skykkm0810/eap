@@ -1,13 +1,10 @@
 .enroll {
     padding:1rem 2rem;
 }
-.enroll p {
-    margin-bottom:20px!important;
-}
+
 .enroll .label {
     display:inline-block;
-    width:20%;
-    min-width:150px;
+    width:200px;
     text-align: right;
     font-weight: bold;
     padding-right: 50px;
@@ -30,7 +27,6 @@
     display:inline-block;
     width:80%;
     font-size: 1rem;
-    padding:0.5rem;
 }
 .enroll .file {
     display:inline-block;
@@ -44,4 +40,24 @@
 .submitBox .submit {
     background-color: orange;
     color:#fff;
+}
+.sublabel {
+    display: inline-block;
+    width:35px
+}
+.subcontents {
+    width:calc(100% - 59px);
+}
+.minus {
+    color:red;
+    cursor:pointer;
+}
+.add {
+    display: block;
+    border:0;
+    padding:5px 10px;
+    border-radius: 5px;
+    background-color:wheat;
+    position: relative;
+    left:200px;
 }

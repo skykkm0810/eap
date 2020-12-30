@@ -76,6 +76,7 @@ import { CustomerListComponent } from './page/customer-list/customer-list.compon
 import { CustomerDetailComponent } from './page/customer-detail/customer-detail.component';
 import { ServiceListComponent } from './page/service-list/service-list.component';
 import { ServiceDetailComponent } from './page/service-detail/service-detail.component';
+import { TeacherEnrollComponent } from './page/teacher-enroll/teacher-enroll.component';
 
 @NgModule({
   declarations: [
@@ -110,6 +111,7 @@ import { ServiceDetailComponent } from './page/service-detail/service-detail.com
     CustomerDetailComponent,
     ServiceListComponent,
     ServiceDetailComponent,
+    TeacherEnrollComponent,
   ],
   imports: [
     BrowserModule,

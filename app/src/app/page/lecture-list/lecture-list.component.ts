@@ -27,4 +27,9 @@ export class LectureListComponent implements AfterViewInit {
   Detail(){
     this.router.navigate(['/lectureDetail/']);
   }
+  clearTable(obj) {
+    var index = this.tableData.data.indexOf(obj);
+    this.tableData.data.splice(index,1)
+    this.tableData = new MatTableDataSource<lecturelist>(LECTURELIST);
+  }
 }

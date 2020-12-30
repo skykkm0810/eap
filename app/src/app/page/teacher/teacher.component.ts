@@ -27,4 +27,12 @@ export class TeacherComponent implements AfterViewInit {
   Detail(){
     this.router.navigate(['/techerDetail/']);
   }
+  Enroll(){
+    this.router.navigate(['/teacherEnroll/']);
+  }
+  clearTable(obj) {
+    var index = this.tableData.data.indexOf(obj);
+    this.tableData.data.splice(index,1)
+    this.tableData = new MatTableDataSource<teacher>(TEACHER);
+  }
 } 
