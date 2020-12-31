@@ -28,4 +28,9 @@ export class ServiceListComponent implements AfterViewInit {
   Detail(){
     this.router.navigate(['/serviceDetail/']);
   }
+  clearTable(obj) {
+    var index = this.tableData.data.indexOf(obj);
+    this.tableData.data.splice(index,1)
+    this.tableData = new MatTableDataSource<customerService>(CUSTOMERSERVICE);
+  }
 }

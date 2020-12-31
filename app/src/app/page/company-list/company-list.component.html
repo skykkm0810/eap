@@ -1,9 +1,9 @@
 <mat-card class="m-b-10 header">
     <span class="title">고객사 목록</span>
-    <button mat-button class="download"> 다운로드 </button>
+    <button mat-button class="download" (click)="export();"> 다운로드 </button>
   </mat-card>
   <div class="contents">
-    <table mat-table [dataSource]="tableData" class="mat-elevation-z8">
+    <table id="companyList" mat-table [dataSource]="tableData" class="mat-elevation-z8">
   
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef> 고객사명 </th>

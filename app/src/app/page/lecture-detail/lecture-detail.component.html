@@ -106,7 +106,7 @@
 
         <ng-container matColumnDef="delete">
           <th mat-header-cell *matHeaderCellDef> 신청 취소 </th>
-          <td mat-cell *matCellDef="let row"> <a href="#" class="delete" (click)="clearTable()"> 취소 하기</a></td>
+          <td mat-cell *matCellDef="let row"> <a class="delete" (click)="clearTable(row)"> 취소 하기</a></td>
         </ng-container>
 
 
