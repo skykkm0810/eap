@@ -12,13 +12,16 @@ import { ready,READY } from '../../interface/interface';
 export class ReadyComponent implements AfterViewInit {
   readyColumns: string[] = ["name","divCause","divResult","date","ready","delete"];
   readyData: MatTableDataSource<ready>;
+  @ViewChild('sort') sort:MatSort;
+  @ViewChild('paginator') paginator:MatPaginator;
   constructor() {
     this.readyData = new MatTableDataSource(READY);
 
    }
 
   ngAfterViewInit(): void {
-
+    this.readyData.sort = this.sort
+    this.readyData.paginator = this.paginator
   }
   clearTable(obj) {
     var index = this.readyData.data.indexOf(obj);

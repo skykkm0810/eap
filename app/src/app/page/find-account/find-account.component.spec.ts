@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeniorListComponent } from './senior-list.component';
+import { FindAccountComponent } from './find-account.component';
 
-describe('SeniorListComponent', () => {
-  let component: SeniorListComponent;
-  let fixture: ComponentFixture<SeniorListComponent>;
+describe('FindAccountComponent', () => {
+  let component: FindAccountComponent;
+  let fixture: ComponentFixture<FindAccountComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SeniorListComponent ]
+      declarations: [ FindAccountComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SeniorListComponent);
+    fixture = TestBed.createComponent(FindAccountComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

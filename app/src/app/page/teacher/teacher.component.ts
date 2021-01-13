@@ -14,15 +14,17 @@ export class TeacherComponent implements AfterViewInit {
 
   tableColumns: string[] = ["name","divCause","divResult","lectureNum",'lastdate','student','point','delete'];
   tableData: MatTableDataSource<teacher>;
+  @ViewChild('pagnator') paginator: MatPaginator;
+  @ViewChild('sort') sort: MatSort;
   constructor(
     public router : Router,
     private ext : ExportService
   ) {
     this.tableData = new MatTableDataSource(TEACHER);
-
    }
   ngAfterViewInit(): void {
-
+    this.tableData.paginator = this.paginator;
+    this.tableData.sort = this.sort;
   }
   Detail(){
     this.router.navigate(['/techerDetail/']);

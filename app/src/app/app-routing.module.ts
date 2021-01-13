@@ -1,16 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TAGS } from './interface/interface';
-import { ActivityListComponent } from './page/activity-list/activity-list.component';
-import { CctvListComponent } from './page/cctv-list/cctv-list.component';
-import { SeniorListComponent } from './page/senior-list/senior-list.component';
-import { TaskListComponent } from './page/task-list/task-list.component';
-import { DietaryComponent } from './page/dietary/dietary.component';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
-import { NoticeAddComponent } from './page/notice-add/notice-add.component';
-import { SeniorDetailComponent } from './page/senior-detail/senior-detail.component';
 import { PhotobookComponent } from './page/photobook/photobook.component';
-import { CctvDetailComponent } from './page/cctv-detail/cctv-detail.component';
 import { ReadyComponent } from './page/ready/ready.component';
 import { TeacherComponent } from './page/teacher/teacher.component';
 import { TecherDetailComponent } from './page/techer-detail/techer-detail.component';
@@ -26,18 +18,14 @@ import { CustomerListComponent } from './page/customer-list/customer-list.compon
 import { CustomerDetailComponent } from './page/customer-detail/customer-detail.component';
 import { ServiceListComponent } from './page/service-list/service-list.component';
 import { ServiceDetailComponent } from './page/service-detail/service-detail.component';
+import { LoginComponent } from './layout/login/login.component';
+import { JoinComponent } from './layout/join/join.component';
+import { FindAccountComponent } from './page/find-account/find-account.component';
+import { ChangePasswardComponent } from './modal/change-passward/change-passward.component';
 
 const routes: Routes = [
   { path: TAGS.DASHBOARD, component: DashboardComponent },
-  { path: TAGS.SENIORLIST, component: SeniorListComponent },
-  { path: TAGS.ACTIVITYLIST, component: ActivityListComponent },
-  { path: TAGS.TASKLIST, component: TaskListComponent },
-  { path: TAGS.CCTVLIST, component: CctvListComponent },
-  { path: TAGS.DIETARYS, component: DietaryComponent },
-  { path: TAGS.NOTICEADD, component: NoticeAddComponent },
-  { path: TAGS.SENIORDETAIL, component: SeniorDetailComponent },
   { path: TAGS.PHOTOBOOK, component: PhotobookComponent },
-  { path: TAGS.CCTVDETAIL, component: CctvDetailComponent },
   { path: TAGS.READY, component: ReadyComponent },
   { path: TAGS.TEACHER, component: TeacherComponent },
   { path: TAGS.TECHERDETAIL, component: TecherDetailComponent },
@@ -52,6 +40,10 @@ const routes: Routes = [
   { path: TAGS.CUSTOMERDETAIL, component: CustomerDetailComponent },
   { path: TAGS.SERVICELIST, component: ServiceListComponent },
   { path: TAGS.SERVICEDETAIL, component: ServiceDetailComponent },
+  { path: TAGS.LOGIN, component: LoginComponent },
+  { path: TAGS.JOIN, component: JoinComponent },
+  { path: TAGS.FINDACCOUNT, component: FindAccountComponent },
+  { path: TAGS.CHANGEPASSWARD, component: ChangePasswardComponent },
 ];
 
 @NgModule({

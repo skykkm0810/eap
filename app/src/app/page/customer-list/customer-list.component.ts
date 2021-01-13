@@ -12,6 +12,8 @@ import { Router } from '@angular/router';
 export class CustomerListComponent implements AfterViewInit {
   tableColumns: string[] = ["name","belong","part","gender",'age','workLocation','TotalUsePoint','remainPoint','studyNum','interest','dateIn'];
   tableData: MatTableDataSource<worker>;
+  @ViewChild(MatSort) sort: MatSort
+  @ViewChild(MatPaginator) paginator: MatPaginator
   constructor(
     public router : Router
 
@@ -22,7 +24,8 @@ export class CustomerListComponent implements AfterViewInit {
 
   
   ngAfterViewInit(): void {
-
+    this.tableData.sort = this.sort
+    this.tableData.paginator = this.paginator
   }
   Detail(){
     this.router.navigate(['/customerDetail/']);

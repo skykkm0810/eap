@@ -13,6 +13,8 @@ import { Router } from '@angular/router';
 export class ServiceListComponent implements AfterViewInit {
   tableColumns: string[] = ["id","kind","title","date",'name','contact','condition','delete'];
   tableData: MatTableDataSource<customerService>;
+  @ViewChild(MatPaginator) paginator:MatPaginator
+  @ViewChild(MatSort) sort:MatSort
   constructor(
     public router : Router
 
@@ -23,7 +25,8 @@ export class ServiceListComponent implements AfterViewInit {
 
   
   ngAfterViewInit(): void {
-
+    this.tableData.sort = this.sort
+    this.tableData.paginator = this.paginator
   }
   Detail(){
     this.router.navigate(['/serviceDetail/']);

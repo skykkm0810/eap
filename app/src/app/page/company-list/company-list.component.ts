@@ -14,6 +14,8 @@ import { ExportService } from '../../service/export.service';
 export class CompanyListComponent implements AfterViewInit {
   tableColumns: string[] = ["name","start","end","totalPoint",'alivePoint','personalPoint','workerNum','manager','contact','email'];
   tableData: MatTableDataSource<company>;
+  @ViewChild(MatSort) sort: MatSort
+  @ViewChild(MatPaginator) paginater : MatPaginator
   constructor(
     public router : Router,
     private ext : ExportService
@@ -23,7 +25,8 @@ export class CompanyListComponent implements AfterViewInit {
 
   
   ngAfterViewInit(): void {
-
+    this.tableData.sort = this.sort
+    this.tableData.paginator = this.paginater
   }
 
   Detail(){

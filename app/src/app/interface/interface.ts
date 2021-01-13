@@ -32,7 +32,11 @@ export const TAGS : Record<string, string> = {
   CUSTOMERLIST: 'customerList',
   CUSTOMERDETAIL: 'customerDetail',
   SERVICELIST:'serviceList',
-  SERVICEDETAIL: 'serviceDetail'
+  SERVICEDETAIL: 'serviceDetail',
+  LOGIN: 'login',
+  JOIN: 'join',
+  FINDACCOUNT:'findAccount',
+  CHANGEPASSWARD:'changePassward',
 } 
 export interface AsideItem {
   path: string;

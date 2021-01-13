@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeniorDetailComponent } from './senior-detail.component';
+import { JoinComponent } from './join.component';
 
-describe('SeniorDetailComponent', () => {
-  let component: SeniorDetailComponent;
-  let fixture: ComponentFixture<SeniorDetailComponent>;
+describe('JoinComponent', () => {
+  let component: JoinComponent;
+  let fixture: ComponentFixture<JoinComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SeniorDetailComponent ]
+      declarations: [ JoinComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SeniorDetailComponent);
+    fixture = TestBed.createComponent(JoinComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,82 @@
+.hidden {
+    display: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.Wrap {
+    width:600px;
+    margin:0 auto;
+}
+.title {
+    text-indent: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.mat-icon {
+    vertical-align: bottom;
+}
+.tabContainer {
+    padding:1rem;
+}
+.needCheck {
+    color:crimson;
+    padding-bottom: 10px;
+}
+.need {
+    color:crimson;
+    font-size: 0.8rem;
+}
+.label {
+    display: block;
+    font-weight: bold;
+    font-size: 1rem;
+}
+.form-control::placeholder{
+    font-size: 0.8rem;
+}
+.inputBox {
+    padding:1rem;
+    border:2px solid #ccc;
+}
+.inputKit {
+    padding-bottom: 20px;
+}
+.pwCheck {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: normal;
+    color:red;
+}
+.green {
+    color:green;
+}
+.phone{
+    width:200px;
+    display: inline-block;
+}
+
+/* 강사 */
+.sexList {
+    display: inline-block;
+    width:100px;
+}
+.sexList .radio {
+    margin-left: 10px;
+}
+.payInfo {
+    padding-bottom: 10px;
+}
+.payInfo span{
+    display: inline-block;
+    width:150px;
+}
+.payInfo .form-control{
+    display: inline-block;
+    width:calc(100% - 150px);
+    font-size: 0.9rem;
+}
+/* 고객사 */
+/* 수강회원 */

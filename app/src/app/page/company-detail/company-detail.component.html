@@ -61,35 +61,35 @@
     <section class="second">
       <div class="chargeTable m-b-20">
         <p class="tableTitle">포인트 충전 내역</p>
-        <table mat-table [dataSource]="table1Data" class="mat-elevation-z8">
+        <table mat-table [dataSource]="table1Data" matSort #sort1='matSort'>
 
           <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef> 일시 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 일시 </th>
             <td mat-cell *matCellDef="let row"> {{row.date}} </td>
           </ng-container>
 
           <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> 담당자 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 담당자 </th>
             <td mat-cell *matCellDef="let row"> {{row.name}} </td>
           </ng-container>
 
           <ng-container matColumnDef="price">
-            <th mat-header-cell *matHeaderCellDef> 금액 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 금액 </th>
             <td mat-cell *matCellDef="let row"> {{row.price}} </td>
           </ng-container>
 
           <ng-container matColumnDef="point">
-            <th mat-header-cell *matHeaderCellDef> 포인트 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 포인트 </th>
             <td mat-cell *matCellDef="let row"> {{row.point}} </td>
           </ng-container>
 
           <ng-container matColumnDef="desc">
-            <th mat-header-cell *matHeaderCellDef> 내용 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 내용 </th>
             <td mat-cell *matCellDef="let row"> {{row.desc}}</td>
           </ng-container>
 
           <ng-container matColumnDef="condition">
-            <th mat-header-cell *matHeaderCellDef> 상태 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 상태 </th>
             <td mat-cell *matCellDef="let row"> {{row.condition}}</td>
           </ng-container>
 
@@ -97,33 +97,35 @@
           <tr mat-row *matRowDef="let row; columns: table1Columns;"></tr>
 
         </table>
+  <mat-paginator [pageSize]="5" #pagnator='matPaginator'></mat-paginator>
+
       </div>
       <div class="useageTable">
         <p class="tableTitle">포인트 사용 내역</p>
-        <table mat-table [dataSource]="table2Data" class="mat-elevation-z8">
+        <table mat-table [dataSource]="table2Data" #sort2='matSort' matSort>
 
           <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef> 일시 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 일시 </th>
             <td mat-cell *matCellDef="let row2"> {{row2.date}} </td>
           </ng-container>
 
           <ng-container matColumnDef="name">
-            <th mat-header-cell *matHeaderCellDef> 회원명 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 회원명 </th>
             <td mat-cell *matCellDef="let row2"> {{row2.name}} </td>
           </ng-container>
 
           <ng-container matColumnDef="point">
-            <th mat-header-cell *matHeaderCellDef> 포인트 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 포인트 </th>
             <td mat-cell *matCellDef="let row2"> {{row2.point}} </td>
           </ng-container>
 
           <ng-container matColumnDef="title">
-            <th mat-header-cell *matHeaderCellDef> 강의명 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 강의명 </th>
             <td mat-cell *matCellDef="let row2"> {{row2.title}} </td>
           </ng-container>
 
           <ng-container matColumnDef="good">
-            <th mat-header-cell *matHeaderCellDef> 만족도 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 만족도 </th>
             <td mat-cell *matCellDef="let row2"> {{row2.good}}</td>
           </ng-container>
 
@@ -131,50 +133,52 @@
           <tr mat-row *matRowDef="let row2; columns: table2Columns;"></tr>
 
         </table>
+  <mat-paginator [pageSize]="5" #pagnator='matPaginator'></mat-paginator>
+
       </div>
     </section>
   </mat-tab>
   <mat-tab label="소속 회원 목록">
     <section class="third">
-      <table mat-table [dataSource]="table3Data" class="mat-elevation-z8">
+      <table mat-table [dataSource]="table3Data" #sort3='matSort' matSort>
 
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> 이름 </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 이름 </th>
           <td mat-cell *matCellDef="let row3"> {{row3.name}} </td>
         </ng-container>
 
         <ng-container matColumnDef="part">
-          <th mat-header-cell *matHeaderCellDef> 부서 </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 부서 </th>
           <td mat-cell *matCellDef="let row3"> {{row3.part}} </td>
         </ng-container>
 
         <ng-container matColumnDef="grade">
-          <th mat-header-cell *matHeaderCellDef> 직급 </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 직급 </th>
           <td mat-cell *matCellDef="let row3"> {{row3.grade}} </td>
         </ng-container>
 
         <ng-container matColumnDef="gender">
-          <th mat-header-cell *matHeaderCellDef> 성별 </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 성별 </th>
           <td mat-cell *matCellDef="let row3"> {{row3.gender}} </td>
         </ng-container>
 
         <ng-container matColumnDef="TotalUsePoint">
-          <th mat-header-cell *matHeaderCellDef> 수강상태 </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 수강상태 </th>
           <td mat-cell *matCellDef="let row3"> {{row3.TotalUsePoint}} </td>
         </ng-container>
 
         <ng-container matColumnDef="workLocation">
-            <th mat-header-cell *matHeaderCellDef> 근무 지역 </th>
+            <th mat-header-cell *matHeaderCellDef mat-sort-header> 근무 지역 </th>
             <td mat-cell *matCellDef="let row3"> {{row3.workLocation}} </td>
           </ng-container>
         
         <ng-container matColumnDef="contact">
-          <th mat-header-cell *matHeaderCellDef> 연락처 </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 연락처 </th>
           <td mat-cell *matCellDef="let row3"> - </td>
         </ng-container>
 
         <ng-container matColumnDef="delete">
-          <th mat-header-cell *matHeaderCellDef> 신청 취소 </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> 신청 취소 </th>
           <td mat-cell *matCellDef="let row3"> <a href="#" class="delete"> 취소 하기</a></td>
         </ng-container>
 
@@ -183,6 +187,8 @@
         <tr mat-row *matRowDef="let row3; columns: table3Columns;"></tr>
 
       </table>
+  <mat-paginator [pageSize]="5" #pagnator='matPaginator'></mat-paginator>
+
     </section>
   </mat-tab>
 </mat-tab-group>

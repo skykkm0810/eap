@@ -42,14 +42,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
-import { SeniorListComponent } from './page/senior-list/senior-list.component';
-import { ActivityListComponent } from './page/activity-list/activity-list.component';
-import { TaskListComponent } from './page/task-list/task-list.component';
-import { CctvListComponent } from './page/cctv-list/cctv-list.component';
-import { DietaryComponent } from './page/dietary/dietary.component';
 import { ChartsModule } from 'ng2-charts';
-import { NoticeAddComponent } from './page/notice-add/notice-add.component';
-import { SeniorDetailComponent } from './page/senior-detail/senior-detail.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -57,10 +50,6 @@ import { CommonModule } from '@angular/common';
 import { FlatpickrModule } from 'angularx-flatpickr';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 import { PhotobookComponent } from './page/photobook/photobook.component';
-import { SeniorAddComponent } from './modal/senior-add/senior-add.component';
-import { SeniorUpdateComponent } from './modal/senior-update/senior-update.component';
-import { CctvAddComponent } from './modal/cctv-add/cctv-add.component';
-import { CctvDetailComponent } from './page/cctv-detail/cctv-detail.component';
 import { ReadyComponent } from './page/ready/ready.component';
 import { TeacherComponent } from './page/teacher/teacher.component';
 import { TecherDetailComponent } from './page/techer-detail/techer-detail.component';
@@ -77,6 +66,10 @@ import { CustomerDetailComponent } from './page/customer-detail/customer-detail.
 import { ServiceListComponent } from './page/service-list/service-list.component';
 import { ServiceDetailComponent } from './page/service-detail/service-detail.component';
 import { TeacherEnrollComponent } from './page/teacher-enroll/teacher-enroll.component';
+import { LoginComponent } from './layout/login/login.component';
+import { JoinComponent } from './layout/join/join.component';
+import { FindAccountComponent } from './page/find-account/find-account.component';
+import { ChangePasswardComponent } from './modal/change-passward/change-passward.component';
 
 @NgModule({
   declarations: [
@@ -84,18 +77,7 @@ import { TeacherEnrollComponent } from './page/teacher-enroll/teacher-enroll.com
     AsideComponent,
     TopComponent,
     DashboardComponent,
-    SeniorListComponent,
-    ActivityListComponent,
-    TaskListComponent,
-    CctvListComponent,
-    DietaryComponent,
-    NoticeAddComponent,
-    SeniorDetailComponent,
     PhotobookComponent,
-    SeniorAddComponent,
-    SeniorUpdateComponent,
-    CctvAddComponent,
-    CctvDetailComponent,
     ReadyComponent,
     TeacherComponent,
     TecherDetailComponent,
@@ -112,6 +94,10 @@ import { TeacherEnrollComponent } from './page/teacher-enroll/teacher-enroll.com
     ServiceListComponent,
     ServiceDetailComponent,
     TeacherEnrollComponent,
+    LoginComponent,
+    JoinComponent,
+    FindAccountComponent,
+    ChangePasswardComponent,
   ],
   imports: [
     BrowserModule,

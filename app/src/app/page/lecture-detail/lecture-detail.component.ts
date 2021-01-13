@@ -26,8 +26,8 @@ export class LectureDetailComponent implements AfterViewInit {
 
   tableColumns: string[] = ["name","belong","enrollDate","condition",'delete'];
   tableData: MatTableDataSource<student>;
-  @ViewChild('pagnator') paginator: MatPaginator;
-  @ViewChild('sort') sort: MatSort;
+  @ViewChild('pagnator1') paginator1: MatPaginator;
+  @ViewChild('sort1') sort1: MatSort;
   @ViewChild('pagnator2') paginator2: MatPaginator;
   @ViewChild('sort2') sort2: MatSort;
   constructor(
@@ -38,8 +38,8 @@ export class LectureDetailComponent implements AfterViewInit {
 
    }
   ngAfterViewInit(): void {
-    this.tableData.paginator = this.paginator;
-    this.tableData.sort = this.sort;
+    this.tableData.paginator = this.paginator1;
+    this.tableData.sort = this.sort2;
     this.table2Data.paginator = this.paginator2;
     this.table2Data.sort = this.sort2;
   }

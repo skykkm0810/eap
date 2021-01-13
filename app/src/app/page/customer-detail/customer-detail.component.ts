@@ -12,13 +12,13 @@ import { studyinfo, STUDYINFO } from '../../interface/interface';
 export class CustomerDetailComponent implements AfterViewInit {
   tableColumns: string[] = ["date","point","title","name",'condition','good'];
   tableData: MatTableDataSource<studyinfo>;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatSort) sort: MatSort;
   constructor(
     ) {
       this.tableData = new MatTableDataSource(STUDYINFO);
      }
   
-  @ViewChild('pagnator') paginator: MatPaginator;
-  @ViewChild('sort') sort: MatSort;
   
   ngAfterViewInit(): void {
     this.tableData.paginator = this.paginator;

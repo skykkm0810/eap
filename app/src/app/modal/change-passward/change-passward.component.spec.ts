@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SeniorUpdateComponent } from './senior-update.component';
+import { ChangePasswardComponent } from './change-passward.component';
 
-describe('SeniorUpdateComponent', () => {
-  let component: SeniorUpdateComponent;
-  let fixture: ComponentFixture<SeniorUpdateComponent>;
+describe('ChangePasswardComponent', () => {
+  let component: ChangePasswardComponent;
+  let fixture: ComponentFixture<ChangePasswardComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SeniorUpdateComponent ]
+      declarations: [ ChangePasswardComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SeniorUpdateComponent);
+    fixture = TestBed.createComponent(ChangePasswardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
