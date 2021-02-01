@@ -1,9 +1,9 @@
 <mat-drawer-container class="main">
-  <mat-drawer class="aside" mode="side" opened *ngIf="login">
+  <mat-drawer class="aside" mode="side" opened *ngIf="!login">
     <app-aside></app-aside>
   </mat-drawer>
   <mat-drawer-content>
-    <div class="top" *ngIf="login">
+    <div class="top" *ngIf="!login">
       <app-top></app-top>
     </div>
     <div class="app">
